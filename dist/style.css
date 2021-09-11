@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  color: rgb(48, 48, 48);
+  ;
+}
+
+#time {
+  font-size: 8rem;
+}
+
+.container{
+  background: rgba(201, 196, 196, 0.473);
+  border-radius: 16px;
+}
+h1 {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 700px) {
+  #time {
+    font-size: 6rem;
+  }
+}
