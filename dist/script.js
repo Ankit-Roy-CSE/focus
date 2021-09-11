@@ -8,7 +8,7 @@ const time = document.getElementById('time'),
 const showAmPm = true;
 
 // Show Time
-function showTime() {
+/*function showTime() {
   let today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
@@ -27,7 +27,23 @@ function showTime() {
 
   setTimeout(showTime, 1000);
 }
-
+*/
+function clock() {
+      var a = document.getElementById('time');
+      var b = new Date();
+      var hour = b.getHours();
+      var min = b.getMinutes();
+      var sec = b.getSeconds();
+      var c = hour + ':' + min;
+      a.innerHTML = c; 
+      var d = document.getElementById('ampm');
+      if (hour >= 12) {        
+        d.innerHTML = 'PM';
+      } else {
+        d.innerHTML = 'AM';
+      }
+    }
+    var i = setInterval(clock, 100);
 // Add Zeros
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
@@ -55,8 +71,10 @@ function addZero(n) {
 // }
 
 function setBackground(){
-  const url ="https://source.unsplash.com/1600x900/?nature,water"
-  document.body.style.backgroundImage = `url(${url})`;
+ // const url ="https://source.unsplash.com/1600x900/?nature,water"
+ // document.body.style.backgroundImage = `url(${url})`;
+//
+document.body.style.cssText = 'background: url(mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover;';
 }
 
 function setGreet(){
@@ -127,7 +145,6 @@ focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
 
 // Run
-showTime();
 setBackground();
 setGreet();
 getName();
