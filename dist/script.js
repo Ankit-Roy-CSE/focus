@@ -55,8 +55,9 @@ function addZero(n) {
 // }
 
 function setBackground(){
-  const url ="https://source.unsplash.com/1600x900/?nature,water"
-  document.body.style.backgroundImage = `url(${url})`;
+  // const url ="https://source.unsplash.com/1600x900/?nature,water"
+  // document.body.style.backgroundImage = `url(${url})`;
+  document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
 }
 
 function setGreet(){
