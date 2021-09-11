@@ -74,7 +74,7 @@ function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
 //
-document.body.style.cssText = 'background: url(file:///C:/Users/Subrata%20Chowdhury/Pictures/Photos/mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover;';
+document.body.style.cssText = 'background: url(mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover;';
 }
 
 function setGreet(){
