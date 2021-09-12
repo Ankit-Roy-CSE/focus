@@ -34,21 +34,45 @@ function clock() {
       var hour = b.getHours();
       var min = b.getMinutes();
       var sec = b.getSeconds();
-      var c = hour + ':' + min;
-      a.innerHTML = c; 
       var d = document.getElementById('ampm');
       if (hour >= 12) {        
         d.innerHTML = 'PM';
       } else {
         d.innerHTML = 'AM';
       }
+      if (min < 10) {        
+        min = '0' + min;
+      } else {
+        min = '' + min;
+      }
+      if (hour < 10) {        
+        hour = '0' + hour;
+      } else {
+        hour = '' + hour;
+      }
+      var c = hour + ':' + min;      
+      a.innerHTML = c; 
     }
     var i = setInterval(clock, 100);
-// Add Zeros
-function addZero(n) {
-  return (parseInt(n, 10) < 10 ? '0' : '') + n;
-}
 
+//color change
+var cont = document.getElementById('container');
+var menu = document.getElementById('menu');
+var ch_color = document.getElementById('ch_color');
+var setting_icon_color = document.getElementById('setting_container');
+var cont_icons = document.querySelectorAll('.icon_g');
+let clrs = document.querySelectorAll('.ch_color_div');
+clrs.forEach(function (clr){
+  clr.addEventListener('click',function(){
+    cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.textcolor}`;
+    menu.style.cssText = `background: ${clr.dataset.color}`;
+    ch_color.style.cssText = `background: ${clr.dataset.color}`;
+    setting_icon_color.style.cssText = `background: ${clr.dataset.color}`;
+    cont_icons.forEach(function(cont_icon){
+      cont_icon.style.cssText = `fill: ${clr.dataset.iconcolor}`;
+    })
+  })
+})
 // Set Background and Greeting
 // function setBgGreet() {
 //   let today = new Date(),
@@ -73,9 +97,9 @@ function addZero(n) {
 function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
-//var a = Math.floor(Math.random() * 55) + 1;
-//document.body.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
-document.body.style.cssText = 'background: url(mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
+var a = Math.floor(Math.random() * 55) + 1;
+document.body.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
+//document.body.style.cssText = 'background: url(mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
 }
 
 function setGreet(){
@@ -144,6 +168,12 @@ name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
+
+
+//Setting Toggle
+var setting = document.querySelector('#setting_container').addEventListener('click',function(){
+  ch_color.classList.toggle('active');
+})
 
 // Run
 setBackground();
