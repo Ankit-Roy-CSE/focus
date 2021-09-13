@@ -97,7 +97,7 @@ clrs.forEach(function (clr){
 function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
-var a = Math.floor(Math.random() * 55) + 1;
+var a = Math.floor(Math.random() * 25) + 1;
 document.body.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
 //document.body.style.cssText = 'background: url(mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
 }
@@ -183,7 +183,7 @@ getFocus();
 
 //Weather
 if('geolocation' in navigator) {
-  let position=navigator.geolocation.getCurrentPosition(getWeather);
+  // navigator.geolocation.getCurrentPosition(getWeather);
 
   function getWeather(position) {
     const lat=position.coords.latitude
@@ -203,5 +203,5 @@ if('geolocation' in navigator) {
   }
 }
 else{
-  console.log('Not supported')
+  console.log('Location Not supported')
 }
