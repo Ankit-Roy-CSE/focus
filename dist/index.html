@@ -3,15 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>CodePen - Dynamic Landing Page</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap'><link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
   
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="weather-container container">
-  <div class="weather-temp">32 &#8451;</div>
-  <div class="weather-location">Kolkata</div>
-</div>
+
+  <div class="bg_img" id="bg_img"></div>
+  <div class="full_screen_container" id="full_screen_container">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="full_screen">
+
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#fff" class="icon_g" stroke="none">
+    <path d="M56 5069 c-59 -46 -56 1 -56 -960 0 -878 0 -882 21 -916 35 -56 60
+    -63 224 -63 165 0 198 9 230 63 19 30 20 56 23 542 l3 509 722 -722 722 -722
+    54 0 54 0 110 108 c60 59 116 122 124 140 33 79 66 42 -721 830 l-721 722 509
+    0 c560 0 554 -1 591 62 21 37 32 185 20 292 -6 58 -11 72 -41 102 l-35 34
+    -903 0 c-901 0 -903 0 -930 -21z"/>
+    <path d="M3196 5056 c-30 -30 -35 -44 -41 -102 -12 -107 -1 -255 20 -292 37
+    -63 31 -62 591 -62 l509 0 -721 -722 c-787 -788 -754 -751 -721 -830 8 -18 64
+    -81 124 -140 l110 -108 54 0 54 0 722 722 722 722 3 -509 c3 -486 4 -512 23
+    -542 32 -54 65 -63 230 -63 164 0 189 7 224 63 21 34 21 38 21 916 0 961 3
+    914 -56 960 -27 21 -29 21 -930 21 l-903 0 -35 -34z"/>
+    <path d="M1223 1598 l-722 -722 -3 509 c-3 486 -4 512 -23 542 -32 54 -65 63
+    -230 63 -164 0 -189 -7 -224 -63 -21 -34 -21 -38 -21 -916 0 -961 -3 -914 56
+    -960 27 -21 29 -21 930 -21 l903 0 35 34 c30 30 35 44 41 102 12 107 1 255
+    -20 292 -37 63 -31 62 -591 62 l-509 0 721 723 c787 787 754 750 721 829 -8
+    18 -64 81 -124 141 l-110 107 -54 0 -54 0 -722 -722z"/>
+    <path d="M2957 2213 c-60 -60 -116 -123 -124 -141 -33 -79 -66 -42 721 -829
+    l721 -723 -509 0 c-560 0 -554 1 -591 -62 -21 -37 -32 -185 -20 -292 6 -58 11
+    -72 41 -102 l35 -34 903 0 c901 0 903 0 930 21 59 46 56 -1 56 960 0 878 0
+    882 -21 916 -35 56 -60 63 -224 63 -165 0 -198 -9 -230 -63 -19 -30 -20 -56
+    -23 -542 l-3 -509 -722 722 -722 722 -54 0 -54 0 -110 -107z"/>
+    </g>
+    </svg>
+  </div>
+  <div class="full_screen_container" id="exit_full_screen_container">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="full_screen">
+
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#fff" class="icon_g" stroke="none">
+    <path d="M230 4885 l-225 -225 365 -365 365 -365 -365 -365 -365 -365 958 0
+    957 0 0 957 0 958 -365 -365 -365 -365 -363 363 c-199 199 -364 362 -367 362
+    -3 0 -106 -101 -230 -225z"/>
+    <path d="M3200 4157 l0 -957 957 0 958 0 -365 365 -365 365 365 365 365 365
+    -228 227 -227 228 -365 -365 -365 -365 -365 365 -365 365 0 -958z"/>
+    <path d="M370 1555 l365 -365 -368 -368 -367 -367 227 -228 228 -227 367 367
+    368 368 365 -365 365 -365 0 958 0 957 -957 0 -958 0 365 -365z"/>
+    <path d="M3200 963 l0 -958 365 365 365 365 368 -368 367 -367 228 227 227
+    228 -367 367 -368 368 365 365 365 365 -958 0 -957 0 0 -957z"/>
+    </g>
+    </svg>
+  </div>
+
   <div class="container" id="container">
     <time id="time"></time><span id="ampm"></span>
 

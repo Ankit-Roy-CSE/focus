@@ -10,8 +10,9 @@ const time = document.getElementById('time'),
 function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
-var a = Math.floor(Math.random() * 41) + 1;
-document.body.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
+ var bg_img = document.getElementById('bg_img');
+var a = Math.floor(Math.random() * 39) + 1;
+bg_img.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-size: cover;';
 }
 // Show Time
 function clock() {
@@ -39,7 +40,7 @@ function clock() {
       var c = hour + ':' + min;      
       a.innerHTML = c; 
     }
-    var i = setInterval(clock, 100);
+    var i = setInterval(clock, 1000);
 
 //color change
 var conts = document.querySelectorAll('.container');
@@ -49,9 +50,12 @@ var setting_icon_color = document.getElementById('setting_container');
 var open_menubar_div = document.querySelector('.open_menubar_div');
 var open_menubar = document.querySelector('.open_menubar');
 var cont_icons = document.querySelectorAll('.icon_g');
+var ch_full_screen_color = document.getElementById('full_screen_container');
+var ch_exit_full_screen_color = document.getElementById('exit_full_screen_container');
 let clrs = document.querySelectorAll('.ch_color_div');
 clrs.forEach(function (clr){
   clr.addEventListener('click',function(){
+    cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.iconcolor}`;
     menu.style.cssText = `background: ${clr.dataset.color}`;
     ch_color.style.cssText = `background: ${clr.dataset.color}`;
     setting_icon_color.style.cssText = `background: ${clr.dataset.color}`;
@@ -60,32 +64,10 @@ clrs.forEach(function (clr){
     cont_icons.forEach(function(cont_icon){
     cont_icon.style.cssText = `fill: ${clr.dataset.iconcolor}`;
     })
-    conts.forEach(function(cont){
-      cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.iconcolor}`;
-    })
+    ch_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
+    ch_exit_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
   })
 })
-// Set Background and Greeting
-// function setBgGreet() {
-//   let today = new Date(),
-//     hour = today.getHours();
-
-//   if (hour < 12) {
-//     // Morning
-//     document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
-//     greeting.textContent = 'Good Morning, ';
-//   } else if (hour < 18) {
-//     // Afternoon
-//     document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
-//     greeting.textContent = 'Good Afternoon, ';
-//   } else {
-//     // Evening
-//     document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
-//     greeting.textContent = 'Good Evening, ';
-//     document.body.style.color = 'white';
-//   }
-// }
-
 
 function setGreet(){
   let today = new Date(),
@@ -170,6 +152,18 @@ setBackground();
 setGreet();
 getName();
 getFocus();
+clock();
+
+var full_screen = document.getElementById('full_screen_container').addEventListener('click', function () {
+  document.body.requestFullscreen();
+  document.getElementById('exit_full_screen_container').style.cssText += 'z-index: 0; display: block;';
+  this.style.cssText += 'z-index: -1; display: none;';
+});
+var exit_full_screen = document.getElementById('exit_full_screen_container').addEventListener('click', function () {
+  document.exitFullscreen();
+  document.getElementById('full_screen_container').style.cssText += 'z-index: 0; display: block;';
+  this.style.cssText += 'z-index: -1; display: none;';
+});
 
 //Weather
 const weather = document.querySelector('.weather-container');
@@ -199,20 +193,4 @@ if('geolocation' in navigator) {
   }
 } else {
   console.log('Not supported')
-}
-
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Enter") {
-    toggleFullScreen();
-  }
-}, false);
-
-function toggleFullScreen() {
-  if (!document.fullscreenElement) {
-      document.body.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
 }

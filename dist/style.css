@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
 }
+:root
+{
+  --color: rgba(0,0,0,0);
+}
 body {
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,11 +16,43 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   color: rgb(48, 48, 48);
   position: relative;
 }
-
+.bg_img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+}
+#exit_full_screen_container
+{
+  z-index: -1;
+}
+.full_screen_container
+{
+  position: absolute;
+  right: 32.5px;
+  bottom: 80px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(170, 212, 253, 0.3);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.full_screen_container:hover
+{
+  background: rgba(255, 255, 255, .40);
+}
+.full_screen
+{
+  width: 20px;
+  height: 20px;
+  transition: 0.3s;
+}
 .container
 {
   padding: 30px 55px;
@@ -42,9 +78,9 @@ body {
 {
   width: 50px;
   height: 200px;
-  background: rgba(170, 212, 253, 0.3);
+  background: rgba(255, 255, 255, 0.3);
   position: relative;
-  left: 360px;
+  left: 240px;
   top: -40px;
   border-radius: 10px;
   display: flex;
@@ -54,10 +90,12 @@ body {
   backdrop-filter: blur(4px);
   transition: 0.3s;
   opacity: 0;
+  z-index: -1;
 }
 .ch_color.active{
   left: 320px;
   opacity: 1;
+  z-index: 0;
 }
 .ch_color_div
 {
@@ -95,7 +133,11 @@ body {
   cursor: pointer;
 }
 
+#ampm
+{
+  font-size: 22px;
 
+}
 h1 {
   margin-bottom: 3rem;
 }
@@ -226,10 +268,5 @@ h2 {
   }
   100%{
     bottom: 15px;
-  }
-}
-@media (max-width: 700px) {
-  #time {
-    font-size: 6rem;
   }
 }
