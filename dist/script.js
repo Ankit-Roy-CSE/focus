@@ -175,28 +175,6 @@ getName();
 getFocus();
 clock();
 
-//Weather
-// if('geolocation' in navigator) {
-//   let position = navigator.geolocation.getCurrentPosition(getWeather);
-
-//   function getWeather(position) {
-//     const lat = position.coords.latitude
-//     const lon = position.coords.longitude
-//     const key = 'ee71c5d5dd0ffa6199e391c96de7a8b7'
-//     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-//     fetch(url)
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//       // const temp=data.main.temp;
-//       // const celcius=Math.floor(temp-273.15);
-//       // const weather=data.weather[0].main;
-//       // const icon=data.weather[0].icon;
-//     })
-//   }
-// } else {
-//   console.log('Not supported')
-// }
 var full_screen = document.getElementById('full_screen_container').addEventListener('click', function () {
   document.body.requestFullscreen();
   document.getElementById('exit_full_screen_container').style.cssText += 'z-index: 0; display: block;';
@@ -207,3 +185,28 @@ var exit_full_screen = document.getElementById('exit_full_screen_container').add
   document.getElementById('full_screen_container').style.cssText += 'z-index: 0; display: block;';
   this.style.cssText += 'z-index: -1; display: none;';
 });
+
+if('geolocation' in navigator) {
+  // navigator.geolocation.getCurrentPosition(getWeather);
+
+  function getWeather(position) {
+    const lat=position.coords.latitude
+    const lon=position.coords.longitude
+    const key='ee71c5d5dd0ffa6199e391c96de7a8b7'
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      // const temp=data.main.temp;
+      // const celcius=Math.floor(temp-273.15);
+      // const weather=data.weather[0].main;
+      // const icon=data.weather[0].icon;
+    })
+
+  }
+}
+else{
+  console.log('Location Not supported')
+}
+
