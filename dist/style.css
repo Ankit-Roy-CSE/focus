@@ -54,6 +54,7 @@ body {
 }
 .container
 {
+  width:35rem;
   padding: 30px 55px;
   border-radius: 15px;
   backdrop-filter: blur(4px);
@@ -121,9 +122,11 @@ body {
   font-size: 8rem;
   cursor: pointer;
 }
+
 #ampm
 {
   font-size: 22px;
+
 }
 h1 {
   margin-bottom: 3rem;
