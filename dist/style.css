@@ -14,10 +14,11 @@ body {
   text-align: center;
   height: 100vh;
   color: rgb(48, 48, 48);
+  position: relative;
 }
+
 .container
 {
-  width:35rem;
   padding: 30px 55px;
   border-radius: 15px;
   backdrop-filter: blur(4px);
@@ -27,14 +28,24 @@ body {
   color: #fff;
   transform: translate(0%, -50%);
 }
+
+.weather-container{
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 10px;
+}
+
 .ch_color
 {
   width: 50px;
   height: 200px;
   background: rgba(170, 212, 253, 0.3);
-  position: absolute;
-  left: 70%;
-  top: 110px;
+  position: relative;
+  left: 360px;
+  top: -40px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -45,7 +56,7 @@ body {
   opacity: 0;
 }
 .ch_color.active{
-  left: 72%;
+  left: 320px;
   opacity: 1;
 }
 .ch_color_div
@@ -65,7 +76,7 @@ body {
 }
 .white
 {
-  background: rgba(255,255,255, 0.7);
+  background: rgba(255,255,255, 0.8);
 }
 .black
 {
@@ -73,20 +84,18 @@ body {
 }
 .dodblue
 {
-  background: rgba(170, 212, 253, 0.3);
+  background: rgba(170, 212, 253, 0.8);
 }
 .no_color
 {
-  background: ;
+  background: rgba(0, 0, 0, 0);
 }
 #time {
   font-size: 8rem;
   cursor: pointer;
 }
 
-#ampm{
-  font-size: 30px; 
-}
+
 h1 {
   margin-bottom: 3rem;
 }
@@ -125,19 +134,58 @@ h2 {
 .setting_icon:hover{
   transform: rotate(90deg);
 }
+.open_menubar
+{
+  font-size: 3.5em;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -53%);
+}
+.open_menubar_div
+{  
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  background: rgba(170, 212, 253, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+.open_menubar_div.active
+{
+  transform: rotate(135deg);
+}
 .menu
 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 40%;
+  flex-direction: column;
+  width: 60px;
   height: 60px;
   background: rgba(170, 212, 253, 0.3);
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-radius: 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   position: absolute;
-  bottom: 70px;
+  bottom: 0px;
+  left: 25px;
   backdrop-filter: blur(4px);
+  transition: 0.5s;
+  opacity: 0;
+  padding-bottom: 70px;
+  padding-top: 10px;
+}
+.menu.active
+{
+  bottom: 20px;
+  height: 360px;
+  opacity: 1;
 }
 .menu_icon
 {
@@ -147,6 +195,7 @@ h2 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.2s;
 }
 .menu_icon:hover
 {
