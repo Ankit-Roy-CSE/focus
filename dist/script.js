@@ -5,29 +5,16 @@ const time = document.getElementById('time'),
   focus = document.getElementById('focus');
 
 // Options
-const showAmPm = true;
-
-// Show Time
-/*function showTime() {
-  let today = new Date(),
-    hour = today.getHours(),
-    min = today.getMinutes(),
-    sec = today.getSeconds();
-
-  // Set AM or PM
-  const amPm = hour >= 12 ? 'PM' : 'AM';
-
-  // 12hr Format
-  hour = hour % 12 || 12;
-
-  // Output Time
-  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
-    sec
-  )} ${showAmPm ? amPm : ''}`;
-
-  setTimeout(showTime, 1000);
+//const showAmPm = true;
+// Set Background Image
+function setBackground(){
+ // const url ="https://source.unsplash.com/1600x900/?nature,water"
+ // document.body.style.backgroundImage = `url(${url})`;
+ var bg_img = document.getElementById('bg_img');
+var a = Math.floor(Math.random() * 39) + 1;
+bg_img.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-size: cover;';
 }
-*/
+// Show Time
 function clock() {
       var a = document.getElementById('time');
       var b = new Date();
@@ -53,24 +40,32 @@ function clock() {
       var c = hour + ':' + min;      
       a.innerHTML = c; 
     }
-    var i = setInterval(clock, 100);
+    var i = setInterval(clock, 1000);
 
 //color change
 var cont = document.getElementById('container');
 var menu = document.getElementById('menu');
 var ch_color = document.getElementById('ch_color');
 var setting_icon_color = document.getElementById('setting_container');
+var open_menubar_div = document.querySelector('.open_menubar_div');
+var open_menubar = document.querySelector('.open_menubar');
 var cont_icons = document.querySelectorAll('.icon_g');
+var ch_full_screen_color = document.getElementById('full_screen_container');
+var ch_exit_full_screen_color = document.getElementById('exit_full_screen_container');
 let clrs = document.querySelectorAll('.ch_color_div');
 clrs.forEach(function (clr){
   clr.addEventListener('click',function(){
-    cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.textcolor}`;
+    cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.iconcolor}`;
     menu.style.cssText = `background: ${clr.dataset.color}`;
     ch_color.style.cssText = `background: ${clr.dataset.color}`;
     setting_icon_color.style.cssText = `background: ${clr.dataset.color}`;
+    open_menubar_div.style.cssText = `background: ${clr.dataset.color}`;
+    open_menubar.style.cssText = `color: ${clr.dataset.iconcolor}`;
     cont_icons.forEach(function(cont_icon){
-      cont_icon.style.cssText = `fill: ${clr.dataset.iconcolor}`;
+    cont_icon.style.cssText = `fill: ${clr.dataset.iconcolor}`;
     })
+    ch_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
+    ch_exit_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
   })
 })
 // Set Background and Greeting
@@ -94,13 +89,6 @@ clrs.forEach(function (clr){
 //   }
 // }
 
-function setBackground(){
- // const url ="https://source.unsplash.com/1600x900/?nature,water"
- // document.body.style.backgroundImage = `url(${url})`;
-var a = Math.floor(Math.random() * 55) + 1;
-document.body.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
-//document.body.style.cssText = 'background: url(mountains-cold-lake-riven-reflection-trees-5k-6000x2848-1206.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;';
-}
 
 function setGreet(){
   let today = new Date(),
@@ -174,34 +162,48 @@ focus.addEventListener('blur', setFocus);
 var setting = document.querySelector('#setting_container').addEventListener('click',function(){
   ch_color.classList.toggle('active');
 })
+//Menubar Toggle
+var menubar = document.querySelector('.open_menubar_div').addEventListener('click',function(){
+  document.querySelector('.open_menubar_div').classList.toggle('active');
+  menu.classList.toggle('active');
+})
 
 // Run
 setBackground();
 setGreet();
 getName();
 getFocus();
+clock();
 
 //Weather
-if('geolocation' in navigator) {
-  let position=navigator.geolocation.getCurrentPosition(getWeather);
+// if('geolocation' in navigator) {
+//   let position = navigator.geolocation.getCurrentPosition(getWeather);
 
-  function getWeather(position) {
-    const lat=position.coords.latitude
-    const lon=position.coords.longitude
-    const key='ee71c5d5dd0ffa6199e391c96de7a8b7'
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      // const temp=data.main.temp;
-      // const celcius=Math.floor(temp-273.15);
-      // const weather=data.weather[0].main;
-      // const icon=data.weather[0].icon;
-    })
-
-  }
-}
-else{
-  console.log('Not supported')
-}
+//   function getWeather(position) {
+//     const lat = position.coords.latitude
+//     const lon = position.coords.longitude
+//     const key = 'ee71c5d5dd0ffa6199e391c96de7a8b7'
+//     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
+//     fetch(url)
+//     .then(response => response.json())
+//     .then(data => {
+//       console.log(data);
+//       // const temp=data.main.temp;
+//       // const celcius=Math.floor(temp-273.15);
+//       // const weather=data.weather[0].main;
+//       // const icon=data.weather[0].icon;
+//     })
+//   }
+// } else {
+//   console.log('Not supported')
+// }
+var full_screen = document.getElementById('full_screen_container').addEventListener('click', function () {
+  document.body.requestFullscreen();
+  document.getElementById('exit_full_screen_container').style.cssText += 'z-index: 0; display: block;';
+  this.style.cssText += 'z-index: -1; display: none;';
+});
+var exit_full_screen = document.getElementById('exit_full_screen_container').addEventListener('click', function () {
+  document.exitFullscreen();
+  document.getElementById('full_screen_container').style.cssText += 'z-index: 0; display: block;';
+  this.style.cssText += 'z-index: -1; display: none;';
+});
