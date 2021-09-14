@@ -11,7 +11,7 @@ function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
  var bg_img = document.getElementById('bg_img');
-var a = Math.floor(Math.random() * 39) + 1;
+var a = Math.floor(Math.random() * 35) + 1;
 bg_img.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-size: cover;';
 }
 // Show Time
@@ -68,27 +68,6 @@ clrs.forEach(function (clr){
     ch_exit_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
   })
 })
-// Set Background and Greeting
-// function setBgGreet() {
-//   let today = new Date(),
-//     hour = today.getHours();
-
-//   if (hour < 12) {
-//     // Morning
-//     document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
-//     greeting.textContent = 'Good Morning, ';
-//   } else if (hour < 18) {
-//     // Afternoon
-//     document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
-//     greeting.textContent = 'Good Afternoon, ';
-//   } else {
-//     // Evening
-//     document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
-//     greeting.textContent = 'Good Evening, ';
-//     document.body.style.color = 'white';
-//   }
-// }
-
 
 function setGreet(){
   let today = new Date(),
