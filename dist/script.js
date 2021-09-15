@@ -55,7 +55,7 @@ var ch_exit_full_screen_color = document.getElementById('exit_full_screen_contai
 let clrs = document.querySelectorAll('.ch_color_div');
 clrs.forEach(function (clr){
   clr.addEventListener('click',function(){
-    cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.iconcolor}`;
+    
     menu.style.cssText = `background: ${clr.dataset.color}`;
     ch_color.style.cssText = `background: ${clr.dataset.color}`;
     setting_icon_color.style.cssText = `background: ${clr.dataset.color}`;
@@ -63,6 +63,9 @@ clrs.forEach(function (clr){
     open_menubar.style.cssText = `color: ${clr.dataset.iconcolor}`;
     cont_icons.forEach(function(cont_icon){
     cont_icon.style.cssText = `fill: ${clr.dataset.iconcolor}`;
+    })
+    conts.forEach(function(cont){
+      cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.iconcolor}`;
     })
     ch_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
     ch_exit_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
@@ -169,6 +172,11 @@ var exit_full_screen = document.getElementById('exit_full_screen_container').add
 const weather = document.querySelector('.weather-container');
 const weatherTemp = weather.querySelector('.weather-temp');
 const weatherLocation = weather.querySelector('.weather-location');
+const weatherPop = document.querySelector('.weather-popup');
+const humid = weatherPop.querySelector('.humidity')
+const sun = weatherPop.querySelector('.sun')
+const wind = weatherPop.querySelector('.wind')
+const tempMinMax = weatherPop.querySelector('.temp_min-max');
 
 if('geolocation' in navigator) {
   navigator.geolocation.getCurrentPosition(getWeather);
@@ -184,7 +192,11 @@ if('geolocation' in navigator) {
     .then(data => {
       console.log(data);
       weatherTemp.innerHTML = ` ${Math.floor(data.main.temp)} &#8451`
-      // weatherLocation.textContent = data.name ;
+      weatherLocation.textContent = ` ${data.name}` ;
+      humid.innerHTML = `Humidity: ${Math.floor(data.main.humidity)}%`
+      sun.innerHTML = `Sunrise-set: ${Math.floor(data.sys.sunrise)} - ${Math.floor(data.sys.sunset)}`
+      wind.innerHTML = `Wind: ${Math.floor(data.wind.speed)} m/s`
+      tempMinMax.innerHTML = `Min-Max: ${Math.floor(data.main.temp_min)} - ${Math.floor(data.main.temp_max)}`
       // const temp=data.main.temp;
       // const celcius=Math.floor(temp-273.15);
       // const weather=data.weather[0].main;
@@ -194,3 +206,8 @@ if('geolocation' in navigator) {
 } else {
   console.log('Not supported')
 }
+
+//Weather Toggle
+weather.addEventListener('click', function () {
+  weatherPop.classList.toggle('active');
+})

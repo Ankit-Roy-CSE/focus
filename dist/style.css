@@ -72,8 +72,40 @@ body {
   color: #fff;
   padding: 0.5rem;
   margin: 10px;
+  z-index: 20;
+  cursor: pointer;
 }
 
+  .weather-popup{
+  z-index: 20;
+  background: rgb(204, 209, 196);
+  position: absolute;
+  right: 2rem;
+  top: 5rem;
+  width:25rem;
+  height: 15rem;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fc2d2dcc;
+  display: none;
+
+  /* gap: 0.5rem; */
+  
+}
+
+.weather-popup.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.weather-popup .popup-item {
+  background: rgb(174, 180, 163);
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .ch_color
 {
   width: 50px;
