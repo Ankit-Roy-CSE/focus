@@ -155,29 +155,44 @@ var exit_full_screen = document.getElementById('exit_full_screen_container').add
   this.style.cssText += 'z-index: -1; display: none;';
 });
 
+//Weather
+const weather = document.querySelector('.weather-container');
+const weatherTemp = weather.querySelector('.weather-temp');
+const weatherLocation = weather.querySelector('.weather-location');
+const weatherPop = document.querySelector('.weather-popup');
+const humid = weatherPop.querySelector('.humidity')
+const sun = weatherPop.querySelector('.sun')
+const wind = weatherPop.querySelector('.wind')
+const tempMinMax = weatherPop.querySelector('.temp_min-max');
+
 if('geolocation' in navigator) {
   navigator.geolocation.getCurrentPosition(getWeather);
 
   function getWeather(position) {
-    const lat=position.coords.latitude
-    const lon=position.coords.longitude
-    const key='ee71c5d5dd0ffa6199e391c96de7a8b7'
+    const lat = position.coords.latitude
+    const lon = position.coords.longitude
+    const key = 'ee71c5d5dd0ffa6199e391c96de7a8b7'
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
     fetch(url)
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      weatherTemp.innerHTML = ` ${Math.floor(data.main.temp)} &#8451`
+      weatherLocation.textContent = ` ${data.name}` ;
+      humid.innerHTML = `Humidity: ${Math.floor(data.main.humidity)}%`
+      sun.innerHTML = `Sunrise-set: ${Math.floor(data.sys.sunrise)} - ${Math.floor(data.sys.sunset)}`
+      wind.innerHTML = `Wind: ${Math.floor(data.wind.speed)} m/s`
+      tempMinMax.innerHTML = `Min-Max: ${Math.floor(data.main.temp_min)} - ${Math.floor(data.main.temp_max)}`
       // const temp=data.main.temp;
       // const celcius=Math.floor(temp-273.15);
       // const weather=data.weather[0].main;
       // const icon=data.weather[0].icon;
     })
-
   }
+} else {
+  console.log('Not supported')
 }
-else{
-  console.log('Location Not supported')
-}
+
 
 var apps = document.querySelectorAll('.app');
 apps.forEach(function(app) {
@@ -332,4 +347,10 @@ setInterval(breathAnimation, totalTime);
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 */
+
+
+//Weather Toggle
+weather.addEventListener('click', function () {
+  weatherPop.classList.toggle('active');
+})
 

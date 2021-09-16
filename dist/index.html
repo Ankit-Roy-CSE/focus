@@ -2,6 +2,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>CodePen - Dynamic Landing Page</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap'>
   <link rel="stylesheet" href="./style.css">
@@ -9,6 +12,19 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
+  <div class="weather-container container">
+    <div class="weather-temp">32</div>
+    <div class="weather-location">Kolkata</div>
+
+  </div>
+
+  <div class="weather-popup ">
+    <div class="humidity popup-item">Humid</div>
+    <div class="sun popup-item">Sun</div>
+    <div class="wind popup-item">Wind</div>
+    <div class="temp_min-max popup-item">tempe</div>
+  </div>
+  
 
   <div class="bg_img" id="bg_img"></div>
   <div class="full_screen_container" id="full_screen_container">
@@ -72,6 +88,7 @@
     </div>
   </div>
   <div class="scroll_down">></div>
+
   <div class="app_con" data-app_id="1">
     <div class="title_bar">
       <div class="title">Calculator</div>
