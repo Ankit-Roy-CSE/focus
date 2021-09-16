@@ -211,6 +211,7 @@ var close_apps = document.querySelectorAll('.control');
 close_apps.forEach(function(close_app) {
   close_app.addEventListener('click', function() {
     document.querySelector('.app_con.active').classList.remove('active');
+    document.querySelector('.app.active').classList.remove('active');
   })
 })
 
@@ -230,6 +231,11 @@ close_apps.forEach(function(close_app) {
 ---------------------------------------------
 */
 
+function backspace(){
+  let inp = document.calc.txt.value;
+  let res = inp.slice(0,inp.length - 1);
+  document.calc.txt.value = res;
+}
 
 let calc = document.querySelector('#calculator');
 calc.addEventListener('submit',function (e){
@@ -238,15 +244,19 @@ calc.addEventListener('submit',function (e){
 
 
 window.addEventListener('keypress', function(e){
-var calc_input = document.querySelector('.app_con.active');
+  var calc_input = document.querySelector('.app_con.active');
   if (calc_input !== null){
     if (e.which == 13 || e.keyCode == 13) {
       document.querySelector('.equal').click();
+    } else {
+
     }
   } else {
 
   }
 })
+
+
 
 /*-------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
@@ -322,3 +332,4 @@ setInterval(breathAnimation, totalTime);
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 */
+

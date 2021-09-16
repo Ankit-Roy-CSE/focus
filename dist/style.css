@@ -17,6 +17,12 @@ body {
   justify-content: center;
   text-align: center;
   min-height: 100vh;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .icon_g
 {
@@ -32,6 +38,7 @@ body {
 #exit_full_screen_container
 {
   z-index: -1;
+  display: none;
 }
 .full_screen_container
 {
@@ -323,7 +330,7 @@ h2 {
   left: 0%;
   transform: scale(0) translate(-50%,-50%);
   opacity: 0;
-  padding: 1.7rem;
+  padding: 2rem;
   background: var(--cont-clr);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -431,10 +438,12 @@ h2 {
    }
    .calculator span.clear
    {
-      grid-column: span 2;
-      width: 160px;
       background: rgba(255, 128, 240, .80);
       color: #fff;
+   }
+   .calculator span.ac
+   {
+      background: rgba(255, 120, 120, .50);
    }
    .calculator span.clear:active
    {

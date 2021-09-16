@@ -83,7 +83,8 @@
     </div>
     <form class="calculator" id="calculator" name="calc">
          <input class="value1" style="border-top-left-radius: 10px; border-top-right-radius: 10px;" type="text" name="txt" autocomplete="off">
-         <span class="num clear" onclick="document.calc.txt.value =''">c</span>
+         <span class="num clear" onclick="backspace()">C</span>
+         <span class="num clear ac" onclick="document.calc.txt.value =''">AC</span>
          <span class="num" onclick="document.calc.txt.value +='/'">/</span>
          <span class="num" onclick="document.calc.txt.value +='*'">*</span>
          <span class="num" onclick="document.calc.txt.value +='7'">7</span>
