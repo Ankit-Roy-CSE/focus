@@ -11,7 +11,7 @@ function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
  var bg_img = document.getElementById('bg_img');
-var a = Math.floor(Math.random() * 39) + 1;
+var a = Math.floor(Math.random() * 35) + 1;
 bg_img.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-size: cover;';
 }
 // Show Time
@@ -22,6 +22,7 @@ function clock() {
       var min = b.getMinutes();
       var sec = b.getSeconds();
       var d = document.getElementById('ampm');
+      var add_0 = '';
       if (hour >= 12) {        
         d.innerHTML = 'PM';
       } else {
@@ -32,43 +33,27 @@ function clock() {
       } else {
         min = '' + min;
       }
-      if (hour < 10) {        
-        hour = '0' + hour;
+      if (hour > 12) {
+        hour = hour - 12;
       } else {
-        hour = '' + hour;
+        hour = hour;
       }
-      var c = hour + ':' + min;      
+      if (hour < 10) {        
+        add_0 = '0';
+      } else {
+        add_0 = '';
+      }      
+      var c = add_0 + hour + ':' + min;      
       a.innerHTML = c; 
     }
-    var i = setInterval(clock, 1000);
+    var i = setInterval(clock, 60000);
 
 //color change
-var conts = document.querySelectorAll('.container');
-var menu = document.getElementById('menu');
-var ch_color = document.getElementById('ch_color');
-var setting_icon_color = document.getElementById('setting_container');
-var open_menubar_div = document.querySelector('.open_menubar_div');
-var open_menubar = document.querySelector('.open_menubar');
-var cont_icons = document.querySelectorAll('.icon_g');
-var ch_full_screen_color = document.getElementById('full_screen_container');
-var ch_exit_full_screen_color = document.getElementById('exit_full_screen_container');
 let clrs = document.querySelectorAll('.ch_color_div');
-clrs.forEach(function (clr){
+clrs.forEach(function(clr){
   clr.addEventListener('click',function(){
-    
-    menu.style.cssText = `background: ${clr.dataset.color}`;
-    ch_color.style.cssText = `background: ${clr.dataset.color}`;
-    setting_icon_color.style.cssText = `background: ${clr.dataset.color}`;
-    open_menubar_div.style.cssText = `background: ${clr.dataset.color}`;
-    open_menubar.style.cssText = `color: ${clr.dataset.iconcolor}`;
-    cont_icons.forEach(function(cont_icon){
-    cont_icon.style.cssText = `fill: ${clr.dataset.iconcolor}`;
-    })
-    conts.forEach(function(cont){
-      cont.style.cssText = `background: ${clr.dataset.color}; color: ${clr.dataset.iconcolor}`;
-    })
-    ch_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
-    ch_exit_full_screen_color.style.cssText += `background: ${clr.dataset.color}`;
+    document.documentElement.style.setProperty('--cont-clr', `${clr.dataset.color}`);
+    document.documentElement.style.setProperty('--text-clr', `${clr.dataset.iconcolor}`);
   })
 })
 
@@ -142,10 +127,12 @@ focus.addEventListener('blur', setFocus);
 
 //Setting Toggle
 var setting = document.querySelector('#setting_container').addEventListener('click',function(){
+  var ch_color = document.getElementById('ch_color');
   ch_color.classList.toggle('active');
 })
 //Menubar Toggle
 var menubar = document.querySelector('.open_menubar_div').addEventListener('click',function(){
+  var menu = document.getElementById('menu');
   document.querySelector('.open_menubar_div').classList.toggle('active');
   menu.classList.toggle('active');
 })
@@ -181,7 +168,6 @@ const tempMinMax = weatherPop.querySelector('.temp_min-max');
 if('geolocation' in navigator) {
   navigator.geolocation.getCurrentPosition(getWeather);
 
-
   function getWeather(position) {
     const lat = position.coords.latitude
     const lon = position.coords.longitude
@@ -207,7 +193,164 @@ if('geolocation' in navigator) {
   console.log('Not supported')
 }
 
+
+var apps = document.querySelectorAll('.app');
+apps.forEach(function(app) {
+  const app_id = app.dataset.app;
+  app.addEventListener('click',function () {
+    let active = document.querySelector('.app.active');
+    if (active === null) {
+      app.classList.add('active');
+      toggleApp(app_id);
+    } else {
+      active.classList.remove('active');
+      app.classList.add('active');
+      toggleApp(app_id);
+    }
+  })
+})
+
+function toggleApp(app_id) {
+  let app_con = document.querySelector(`.app_con[data-app_id="${app_id}"]`);
+  let active = document.querySelector('.app_con.active');
+  if (active === null) {
+    app_con.classList.add('active');
+  } else {
+    active.classList.remove('active');
+    app_con.classList.add('active');
+  }
+
+}
+
+var close_apps = document.querySelectorAll('.control');
+close_apps.forEach(function(close_app) {
+  close_app.addEventListener('click', function() {
+    document.querySelector('.app_con.active').classList.remove('active');
+    document.querySelector('.app.active').classList.remove('active');
+  })
+})
+
+
+/*-------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+           start calculator app
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+*/
+
+function backspace(){
+  let inp = document.calc.txt.value;
+  let res = inp.slice(0,inp.length - 1);
+  document.calc.txt.value = res;
+}
+
+let calc = document.querySelector('#calculator');
+calc.addEventListener('submit',function (e){
+  e.preventDefault();
+})
+
+
+window.addEventListener('keypress', function(e){
+  var calc_input = document.querySelector('.app_con.active');
+  if (calc_input !== null){
+    if (e.which == 13 || e.keyCode == 13) {
+      document.querySelector('.equal').click();
+    } else {
+
+    }
+  } else {
+
+  }
+})
+
+
+
+/*-------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+            end calculator app
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+*/
+
+
+/*-------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+           start relax app
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+*/
+
+const relax_container = document.getElementById('relax_container');
+const text = document.getElementById('text');
+
+const totalTime = 7500;
+const breatheTime = (totalTime / 5) * 2;
+const holdTime = totalTime / 5;
+
+breathAnimation();
+
+function breathAnimation() {
+  text.innerText = 'Breathe In!';
+  relax_container.classList.remove("shrink")
+  relax_container.classList.add("grow")
+
+  // container.className = 'container grow';
+
+  setTimeout(() => {
+    text.innerText = 'Hold';
+
+    setTimeout(() => {
+      text.innerText = 'Breathe Out!';
+      relax_container.classList.remove("grow")
+      relax_container.classList.add("shrink")
+    }, holdTime);
+  }, breatheTime);
+}
+
+setInterval(breathAnimation, totalTime);
+
+/*-------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+            end relax app
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+*/
+
+
 //Weather Toggle
 weather.addEventListener('click', function () {
   weatherPop.classList.toggle('active');
 })
+
