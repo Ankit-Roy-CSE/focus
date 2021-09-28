@@ -46,7 +46,7 @@ function clock() {
       var c = add_0 + hour + ':' + min;      
       a.innerHTML = c; 
     }
-    var i = setInterval(clock, 60000);
+    var i = setInterval(clock, 1000);
 
 //color change
 let clrs = document.querySelectorAll('.ch_color_div');
@@ -177,12 +177,14 @@ if('geolocation' in navigator) {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      weatherTemp.innerHTML = ` ${Math.floor(data.main.temp)} &#8451`
+      weatherTemp.innerHTML = ` ${Math.floor(data.main.temp)}&#8451`
       weatherLocation.textContent = ` ${data.name}` ;
-      humid.innerHTML = `Humidity: ${Math.floor(data.main.humidity)}%`
-      sun.innerHTML = `Sunrise-set: ${Math.floor(data.sys.sunrise)} - ${Math.floor(data.sys.sunset)}`
-      wind.innerHTML = `Wind: ${Math.floor(data.wind.speed)} m/s`
-      tempMinMax.innerHTML = `Min-Max: ${Math.floor(data.main.temp_min)} - ${Math.floor(data.main.temp_max)}`
+      humid.innerHTML = `Humidity:<br> ${Math.floor(data.main.humidity)}%`
+      sun.innerHTML = `Sunrise-set:<br> ${Math.floor(data.sys.sunrise)} - ${Math.floor(data.sys.sunset)}`
+      wind.innerHTML = `Wind:<br> ${Math.floor(data.wind.speed)} m/s`
+      tempMinMax.innerHTML = `Min-Max:<br> ${Math.floor(data.main.temp_min)} - ${Math.floor(data.main.temp_max)}`
+      document.querySelector('.weather-popup_temp').innerHTML = `${Math.floor(data.main.temp)}&#8451`;
+      document.querySelector('.weather-popup_location').innerHTML = `${data.name}`;
       // const temp=data.main.temp;
       // const celcius=Math.floor(temp-273.15);
       // const weather=data.weather[0].main;
@@ -263,6 +265,66 @@ window.addEventListener('keypress', function(e){
   if (calc_input !== null){
     if (e.which == 13 || e.keyCode == 13) {
       document.querySelector('.equal').click();
+    } else {
+
+    }if (e.which == 42 || e.keyCode == 42) {
+      document.querySelector('.mult').click();
+    } else {
+
+    }if (e.which == 43 || e.keyCode == 43) {
+      document.querySelector('.plus').click();
+    } else {
+
+    }if (e.which == 45 || e.keyCode == 45) {
+      document.querySelector('.min').click();
+    } else {
+
+    }if (e.which == 46 || e.keyCode == 46) {
+      document.querySelector('.dot').click();
+    } else {
+
+    }if (e.which == 47 || e.keyCode == 47) {
+      document.querySelector('.divi').click();
+    } else {
+
+    }if (e.which == 48 || e.keyCode == 48) {
+      document.querySelector('.zero').click();
+    } else {
+
+    }if (e.which == 49 || e.keyCode == 49) {
+      document.querySelector('.one').click();
+    } else {
+
+    }if (e.which == 50 || e.keyCode == 50) {
+      document.querySelector('.two').click();
+    } else {
+
+    }if (e.which == 51 || e.keyCode == 51) {
+      document.querySelector('.three').click();
+    } else {
+
+    }if (e.which == 52 || e.keyCode == 52) {
+      document.querySelector('.four').click();
+    } else {
+
+    }if (e.which == 53 || e.keyCode == 53) {
+      document.querySelector('.five').click();
+    } else {
+
+    }if (e.which == 54 || e.keyCode == 54) {
+      document.querySelector('.six').click();
+    } else {
+
+    }if (e.which == 55 || e.keyCode == 55) {
+      document.querySelector('.seven').click();
+    } else {
+
+    }if (e.which == 56 || e.keyCode == 56) {
+      document.querySelector('.eight').click();
+    } else {
+
+    }if (e.which == 57 || e.keyCode == 57) {
+      document.querySelector('.nine').click();
     } else {
 
     }
@@ -354,3 +416,7 @@ weather.addEventListener('click', function () {
   weatherPop.classList.toggle('active');
 })
 
+var ch_blur = document.querySelector('.ch_blur')
+ch_blur.addEventListener('change', function () {
+  document.documentElement.style.setProperty('--cont-blur', ch_blur.value + 'px');
+})
