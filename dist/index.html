@@ -6,23 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>CodePen - Dynamic Landing Page</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap'>
   <link rel="stylesheet" href="./style.css">
   
 </head>
 <body>
 <!-- partial:index.partial.html -->
-  <div class="weather-container container">
-    <div class="weather-temp">32</div>
+  <div class="weather-container app">
+    <div class="weather-temp">23&#8451</div>
     <div class="weather-location">Kolkata</div>
-
   </div>
 
-  <div class="weather-popup ">
-    <div class="humidity popup-item">Humid</div>
-    <div class="sun popup-item">Sun</div>
-    <div class="wind popup-item">Wind</div>
-    <div class="temp_min-max popup-item">tempe</div>
+  <div class="weather-popup app_con">
+    <div class="title_bar">
+      <div class="title">Weather</div>
+      <div class="control">
+        <svg width="20px" height="20px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use href="#app_close"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="weather-grid-item title_bar_grid">
+      <div class="weather-popup_location">Kolkata</div>
+      <div>
+        <input type="text" class="search_weather" name="">
+      </div>
+    </div>
+    <div class="weather-grid-item">
+      <div class="weather-popup_temp">23&#8451</div>
+    </div>
+    <div class="weather-grid-item weather-grid-item_3">
+      <div class="humidity popup-item">Humid</div>
+      <div class="sun popup-item">Sun</div>
+      <div class="wind popup-item">Wind</div>
+      <div class="temp_min-max popup-item">tempe</div>
+    </div>
+    <div class="weather-grid-item"></div>
   </div>
   
 
@@ -56,6 +74,7 @@
     <div class="ch_color_div black" data-color="rgba(0, 0, 0, 0.50)" data-iconcolor="#fff"></div>
     <div class="ch_color_div dodblue" data-color="rgba(170, 212, 253, 0.3)" data-iconcolor="#fff"></div>
     <div class="ch_color_div no_color" data-color="rgba(255,255, 255, 0.0)" data-iconcolor="#fff"></div>
+    <input type="range" max="20" min="0" value="4" class="ch_blur" name="">
   </div>
   <div class="setting_container" id="setting_container">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -100,24 +119,24 @@
     </div>
     <form class="calculator" id="calculator" name="calc">
          <input class="value1" style="border-top-left-radius: 10px; border-top-right-radius: 10px;" type="text" name="txt" autocomplete="off">
-         <span class="num clear" onclick="backspace()">C</span>
+         <span class="num clear backspace" onclick="backspace()">C</span>
          <span class="num clear ac" onclick="document.calc.txt.value =''">AC</span>
-         <span class="num" onclick="document.calc.txt.value +='/'">/</span>
-         <span class="num" onclick="document.calc.txt.value +='*'">*</span>
-         <span class="num" onclick="document.calc.txt.value +='7'">7</span>
-         <span class="num" onclick="document.calc.txt.value +='8'">8</span>
-         <span class="num" onclick="document.calc.txt.value +='9'">9</span>
-         <span class="num" onclick="document.calc.txt.value +='-'">-</span>
-         <span class="num" onclick="document.calc.txt.value +='4'">4</span>
-         <span class="num" onclick="document.calc.txt.value +='5'">5</span>
-         <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+         <span class="num divi" onclick="document.calc.txt.value +='/'">/</span>
+         <span class="num mult" onclick="document.calc.txt.value +='*'">*</span>
+         <span class="num seven" onclick="document.calc.txt.value +='7'">7</span>
+         <span class="num eight" onclick="document.calc.txt.value +='8'">8</span>
+         <span class="num nine" onclick="document.calc.txt.value +='9'">9</span>
+         <span class="num min" onclick="document.calc.txt.value +='-'">-</span>
+         <span class="num four" onclick="document.calc.txt.value +='4'">4</span>
+         <span class="num five" onclick="document.calc.txt.value +='5'">5</span>
+         <span class="num six" onclick="document.calc.txt.value +='6'">6</span>
          <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
-         <span class="num" onclick="document.calc.txt.value +='3'">3</span>
-         <span class="num" onclick="document.calc.txt.value +='2'">2</span>
-         <span class="num" onclick="document.calc.txt.value +='1'">1</span>
-         <span class="num" style="border-bottom-left-radius: 10px;" onclick="document.calc.txt.value +='0'">0</span>
-         <span class="num" onclick="document.calc.txt.value +='00'">00</span>
-         <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+         <span class="num three" onclick="document.calc.txt.value +='3'">3</span>
+         <span class="num two" onclick="document.calc.txt.value +='2'">2</span>
+         <span class="num one" onclick="document.calc.txt.value +='1'">1</span>
+         <span class="num zero" style="border-bottom-left-radius: 10px;" onclick="document.calc.txt.value +='0'">0</span>
+         <span class="num db_zero" onclick="document.calc.txt.value +='00'">00</span>
+         <span class="num dot" onclick="document.calc.txt.value +='.'">.</span>
          <span class="num equal" style="border-bottom-right-radius: 10px;" onclick="document.calc.txt.value = eval(calc.txt.value); if (eval(calc.txt.value) !== undefined) {document.calc.txt.value = eval(calc.txt.value);} else {document.calc.txt.value = ''}">=</span>
     </form>
   </div>

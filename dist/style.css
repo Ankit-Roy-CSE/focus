@@ -6,6 +6,7 @@
 html{
   --cont-clr: rgba(0,0,0,0);
   --text-clr: #fff;
+  --cont-blur: 4px;
 }
 body {
   background-repeat: no-repeat;
@@ -29,7 +30,7 @@ body {
   fill: var(--text-clr);
 }
 .bg_img {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -49,7 +50,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   background: var(--cont-clr);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(var(--cont-blur));
   cursor: pointer;
 }
 .full_screen_container:hover
@@ -67,7 +68,7 @@ body {
   width:35rem;
   padding: 1.8rem 2rem;
   border-radius: 15px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(var(--cont-blur));
   text-shadow: 4px 4px 15px rgba(0, 0, 0, .30);
   position: absolute;
   top: 45%;
@@ -75,51 +76,167 @@ body {
   transform: translate(0%, -50%);
   background: var(--cont-clr);
 }
-
+.weather-temp
+{
+  font-size: 30px;
+  font-weight: bold;
+}
 .weather-container{
   position: absolute;
   right: 30px;
   top: 25px;
-  color: #fff;
-  padding: 0.5rem;
+  color: var(--text-clr);
+  padding: 1.3rem;
+  border-radius: 10px;
   margin: 10px;
   z-index: 20;
+  background: var(--cont-clr);
   cursor: pointer;
+  backdrop-filter: blur(var(--cont-blur));
+  z-index: 2;
 }
-
+.weather-container:hover
+{
+  background: rgba(255,255,255,0.450);
+}
+/* 
+.weather-container:after
+{
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background: linear-gradient(45deg,violet,pink,yellow);
+  width: 0px;
+  height: 0px;
+  filter: blur(7px);
+  z-index: -1;
+  transition: 0.3s;
+}
+.weather-container:hover:after
+{
+  width: 120px;
+  height: 105px;
+ 
+}
+ */
   .weather-popup{
   z-index: 20;
-  background: rgb(204, 209, 196);
-  position: absolute;
+  background: var(--cont-clr);
+/*   position: absolute;
   right: 2rem;
-  top: 5rem;
-  width:25rem;
-  height: 15rem;
+  top: 5rem; */
   border-radius: 10px;
   text-align: center;
   background-color: #fc2d2dcc;
-  display: none;
+  /* display: none; */
+  display: grid;
+  color: #000;
+  grid-template-areas: "a a a "
+                      "b b b"
+                      "c d d";
 
   /* gap: 0.5rem; */
   
 }
 
-.weather-popup.active {
+.weather-grid-item
+{
+  min-width: 50px;
+  min-height: 50px;
+  background: rgba(255, 255, 255, .30);
+  border-radius: 10px;
+}
+
+.weather-grid-item:nth-of-type(2)
+{
+  grid-area: a;
+}
+.weather-grid-item:nth-of-type(3)
+{
+  grid-area: b;
+  height: 170px;
+  width: 550px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}.weather-grid-item:nth-of-type(4)
+{
+  grid-area: c;
+  height: 100px;
+  margin-bottom: 10px;
+  width: 220px;
+}.weather-grid-item:nth-of-type(5)
+{
+  height: 170px;
+  grid-area: d;
+  margin-left: 10px;
+  min-width: 320px;
+}
+.popup-item:nth-of-type(1)
+{
+  border-top-left-radius: 10px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.popup-item:nth-of-type(2)
+{
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #fff;
+}
+.popup-item:nth-of-type(3)
+{
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid #fff;
+}
+.popup-item:nth-of-type(4)
+{
+  border-bottom-right-radius: 10px;
+}
+.search_weather
+{
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  padding: 0px 10px;
+}
+.title_bar_grid
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 18px;
+}
+.weather-popup_location
+{
+  color: var(--text-clr);
+}
+.weather-popup_temp
+{
+  font-size: 4.5rem;
+  font-weight: bold;
+  position: relative;
+  top: 70px;
+  left: -155px;
+  color: var(--text-clr);
+}
+.weather-grid-item_3{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  background: rgba(0, 0, 0, 0);
 }
-
-.weather-popup .popup-item {
-  background: rgb(174, 180, 163);
-  margin: 0.5rem;
+.popup-item {
+  background: rgba(255,255,255, .450);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .ch_color
 {
-  width: 50px;
+  width: 75px;
   height: 200px;
   background: var(--cont-clr);
   position: relative;
@@ -127,16 +244,15 @@ body {
   top: -40px;
   border-radius: 10px;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(var(--cont-blur));
   transition: 0.3s;
   opacity: 0;
   z-index: -1;
 }
 .ch_color.active{
-  left: 320px;
+  left: 340px;
   opacity: 1;
   z-index: 0;
 }
@@ -146,6 +262,8 @@ body {
   height: 35px;
   border-radius: 5px;
   position: relative;
+  left: 10px;
+  top: 5px;
   transition: 0.3s;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
   cursor: pointer;
@@ -154,6 +272,15 @@ body {
 {
   width: 40px;
   height: 40px;
+}
+.ch_blur
+{
+  transform: rotate(-90deg);
+  position: relative;
+  left: -10px;
+  top: -90px;
+  height: 5px;
+  width: 140px;
 }
 .white
 {
@@ -202,7 +329,7 @@ h2 {
   padding: 10px;
   border-radius: 10px;
   background: var(--cont-clr);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(var(--cont-blur));
   cursor: pointer;
 }
 .setting_container:hover
@@ -248,7 +375,8 @@ h2 {
   position: absolute;
   bottom: 25px;
   left: 30px;
-  background: var(--cont-clr);
+  background: var(--cont-clr);  
+  backdrop-filter: blur(var(--cont-blur));
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -275,7 +403,7 @@ h2 {
   position: absolute;
   bottom: 0px;
   left: 25px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(var(--cont-blur));
   transition: 0.5s;
   opacity: 0;
   padding-bottom: 70px;
@@ -373,11 +501,11 @@ h2 {
   transform: scale(0) translate(-50%,-50%);
   opacity: 0;
   padding: 2rem;
+  padding-top: calc(40px + 2rem);
   background: var(--cont-clr);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   transition: 0.3s;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(calc(var(--cont-blur)*2));
 }
 .app_con.active
 {
@@ -391,7 +519,7 @@ h2 {
   height: 40px;
   width: 100%;
   background: rgba(255, 255, 255, .50);
-  top: -40px;
+  top: 0px;
   left: 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
