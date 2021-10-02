@@ -11,7 +11,7 @@ function setBackground(){
  // const url ="https://source.unsplash.com/1600x900/?nature,water"
  // document.body.style.backgroundImage = `url(${url})`;
  var bg_img = document.getElementById('bg_img');
-var a = Math.floor(Math.random() * 35) + 1;
+var a = Math.floor(Math.random() * 34) + 1;
 bg_img.style.cssText = 'background: url(bg-img/' + a + '.jpg); background-size: cover;';
 }
 // Show Time
@@ -420,3 +420,54 @@ var ch_blur = document.querySelector('.ch_blur')
 ch_blur.addEventListener('change', function () {
   document.documentElement.style.setProperty('--cont-blur', ch_blur.value + 'px');
 })
+
+/*-------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+           start search
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+---------------------------------------------
+*/
+
+document.querySelector('.open_search_google').addEventListener('click', function() {
+  document.querySelector('.open_search_google').classList.toggle('hover');
+  document.querySelector('.down_arrow').classList.toggle('hover');
+  document.querySelector('.search_google').classList.toggle('active');
+})
+
+document.querySelector('.search_google_input').addEventListener('keypress', function (e) {
+  if (e.keyCode == 13) {
+      var a = document.querySelector('.search_google_input');
+      var b = a.value;
+      var c = b.length;
+      if (c > 0) {
+        window.location = 'https://www.google.com/search?q=' + b;
+      } else {
+
+      }
+    } else {
+      
+    }
+    });
+
+/*-------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+            end search
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+---------------------------           -------          --------------------------
+*/
