@@ -416,10 +416,13 @@ weather.addEventListener('click', function () {
   weatherPop.classList.toggle('active');
 })
 
-var ch_blur = document.querySelector('.ch_blur')
+var ch_blur = document.querySelector('.ch_blur');
 ch_blur.addEventListener('change', function () {
   document.documentElement.style.setProperty('--cont-blur', ch_blur.value + 'px');
+  localStorage.setItem('blur', ch_blur.value);
 })
+document.documentElement.style.setProperty('--cont-blur', localStorage.getItem('blur') + 'px');
+ch_blur.value = localStorage.getItem('blur');
 
 /*-------------------------------------------
 ---------------------------------------------
