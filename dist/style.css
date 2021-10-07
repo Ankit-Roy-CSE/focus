@@ -290,8 +290,9 @@ body {
   font-size: 4.5rem;
   font-weight: bold;
   position: relative;
+  width: 40%;
   top: 70px;
-  left: -155px;
+  left: 0px;
   color: var(--text-clr);
 }
 .weather-grid-item_3{
@@ -592,17 +593,17 @@ h2 {
   position: absolute;
   height: 40px;
   width: 100%;
-  background: rgba(255, 255, 255, .50);
+  background: var(--cont-clr);
   top: 0px;
   left: 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom: 0.1px solid rgba(0, 0, 0, .50);
+  border-bottom: 0.1px solid var(--text-clr);
   padding: 1.1rem 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #000;
+  color: var(--text-clr);
   font-size: 22px;
 }
 .control
