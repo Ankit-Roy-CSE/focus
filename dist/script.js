@@ -411,7 +411,7 @@ setInterval(breathAnimation, totalTime);
 */
 
 
-//Weather Toggle
+//Weather Toggle.
 weather.addEventListener('click', function () {
   weatherPop.classList.toggle('active');
 })
