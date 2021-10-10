@@ -54,8 +54,12 @@ clrs.forEach(function(clr){
   clr.addEventListener('click',function(){
     document.documentElement.style.setProperty('--cont-clr', `${clr.dataset.color}`);
     document.documentElement.style.setProperty('--text-clr', `${clr.dataset.iconcolor}`);
+    localStorage.setItem('cont_color', clr.dataset.color);
+    localStorage.setItem('text_color', clr.dataset.iconcolor);
   })
 })
+document.documentElement.style.setProperty('--cont-clr', localStorage.getItem('cont_color'));
+document.documentElement.style.setProperty('--text-clr', localStorage.getItem('text_color'));
 
 function setGreet(){
   let today = new Date(),
@@ -448,7 +452,7 @@ document.querySelector('.open_search_google').addEventListener('click', function
 document.querySelector('.search_google_input').addEventListener('keypress', function (e) {
   if (e.keyCode == 13) {
       var a = document.querySelector('.search_google_input');
-      var b = a.value;
+      var b = a.value.trim();
       var c = b.length;
       if (c > 0) {
         window.location = 'https://www.google.com/search?q=' + b;
@@ -474,3 +478,25 @@ document.querySelector('.search_google_input').addEventListener('keypress', func
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 */
+
+document.querySelector('.ch_border').addEventListener('click', function () {
+    if (this.checked == true) {
+        document.documentElement.style.setProperty('--border','2px solid var(--text-clr)');
+        document.documentElement.style.setProperty('--icons-height','50px');
+        localStorage.setItem('checked','true');
+    } else {
+        document.documentElement.style.setProperty('--border','0px solid var(--text-clr)');
+        document.documentElement.style.setProperty('--icons-height','45px');
+        localStorage.setItem('checked','false');
+    }
+});
+if (localStorage.getItem('checked') == 'true') {
+    document.querySelector('.ch_border').click();
+} else {
+
+}
+
+document.querySelector('.reset').addEventListener('click', function () {
+    localStorage.clear();
+    window.location.reload();
+})
