@@ -478,3 +478,25 @@ document.querySelector('.search_google_input').addEventListener('keypress', func
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 */
+
+document.querySelector('.ch_border').addEventListener('click', function () {
+    if (this.checked == true) {
+        document.documentElement.style.setProperty('--border','2px solid var(--text-clr)');
+        document.documentElement.style.setProperty('--icons-height','50px');
+        localStorage.setItem('checked','true');
+    } else {
+        document.documentElement.style.setProperty('--border','0px solid var(--text-clr)');
+        document.documentElement.style.setProperty('--icons-height','45px');
+        localStorage.setItem('checked','false');
+    }
+});
+if (localStorage.getItem('checked') == 'true') {
+    document.querySelector('.ch_border').click();
+} else {
+
+}
+
+document.querySelector('.reset').addEventListener('click', function () {
+    localStorage.clear();
+    window.location.reload();
+})
