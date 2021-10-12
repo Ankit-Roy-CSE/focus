@@ -112,6 +112,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 15px;
+  padding-right: 30px;
   color: var(--text-clr);
   font-size: 18px;
 }
@@ -363,7 +364,7 @@ td {
 .ch_color
 {
   width: 180px;
-  height: 210px;
+  height: 220px;
   background: var(--cont-clr);
   position: relative;
   left: 240px;
@@ -499,6 +500,62 @@ td {
   position: absolute;
   left: 55px;
   top: 120px;
+}
+.cont_color_input
+{
+  outline: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  position: relative;
+  left: 10px;
+  top: 0px;
+  transition: 0.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
+  cursor: pointer;
+  border: 2px solid var(--text-clr);
+  padding: 15px;
+  background: var(--cont-clr);
+}
+.cont_color_input::after
+{
+  content: '+';
+  font-size: 30px;
+  color: #fff;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+.icon_color_input
+{
+  outline: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  position: absolute;
+  left: 55px;
+  bottom: 7px;
+  transition: 0.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
+  cursor: pointer;
+  border: 2px solid var(--text-clr);
+  padding: 15px;
+  background: var(--text-clr);
+}
+.icon_color_input::after
+{
+  content: '+';
+  font-size: 30px;
+  color: #fff;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
 }
 
 #time {
@@ -716,6 +773,7 @@ h2 {
   transition: 0.3s;
   backdrop-filter: blur(calc(var(--cont-blur)*2));
   border: var(--border);
+  z-index: 3;
 
 }
 .app_con.active
@@ -991,3 +1049,15 @@ h2 {
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 */
+
+.search_icon
+{
+  width: 20px;
+  height: 20px;
+  fill: var(--text-clr);
+  position: absolute;
+  right: 55px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  cursor: pointer;
+}

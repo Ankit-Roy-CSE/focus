@@ -476,20 +476,26 @@ document.querySelector('.open_search_google').addEventListener('click', function
   document.querySelector('.search_google').classList.toggle('active');
 })
 
-document.querySelector('.search_google_input').addEventListener('keypress', function (e) {
-  if (e.keyCode == 13) {
-      var a = document.querySelector('.search_google_input');
-      var b = a.value.trim();
-      var c = b.length;
-      if (c > 0) {
-        window.location = 'https://www.google.com/search?q=' + b;
-      } else {
-
-      }
+function search_js() {
+  var a = document.querySelector('.search_google_input');
+  var b = a.value.trim();
+  var c = b.length;
+  if (c > 0) {
+    if (b.search('http') == 0 || b.search('file') == 0) {
+      b.toLowerCase();
+      window.location.href = b;
     } else {
-      
+      window.location = 'https://www.google.com/search?q=' + b;
     }
-    });
+  } else {
+
+  }
+};
+document.querySelector('.search_google_input').addEventListener('keypress', function (event) {
+  if (event.keyCode == 13) {
+    search_js();
+  }
+});
 
 /*-------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
@@ -525,5 +531,27 @@ if (localStorage.getItem('checked') == 'true') {
 
 document.querySelector('.reset').addEventListener('click', function () {
     localStorage.clear();
+    localStorage.setItem('blur', 4);
+    document.documentElement.style.setProperty('--cont-blur', localStorage.getItem('blur') + 'px');
+    document.querySelector('.ch_blur').value = localStorage.getItem('blur');
     window.location.reload();
+});
+
+document.querySelector('.cont_color_input').addEventListener('change', function (){
+    var hexCode = document.querySelector('.cont_color_input').value;
+    var hex = hexCode.replace('#','');
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    var r = parseInt(hex.substring(0,2), 16),
+        g = parseInt(hex.substring(2,4), 16),
+        b = parseInt(hex.substring(4,6), 16);
+    var full = 'rgba(' + r.toString() + ',' + g.toString() + ',' + b.toString() + ',' + '0.5' + ')';
+    localStorage.setItem('cont_color',full);
+    document.documentElement.style.setProperty('--cont-clr', full);
+});
+document.querySelector('.icon_color_input').addEventListener('change', function (){
+  var a = this.value;
+  localStorage.setItem('text_color',a);
+  document.documentElement.style.setProperty('--text-clr', a);
 })
