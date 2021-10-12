@@ -126,7 +126,8 @@ body {
   height: 50px;
   border-radius: 50%;
   position: relative;
-  top: 15px;
+  top: -52px;
+  left: 0px;
 }
 .bookmarks_img_add
 {
