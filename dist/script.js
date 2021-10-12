@@ -194,23 +194,35 @@ if('geolocation' in navigator) {
       wind.innerHTML = `Wind:<br> ${Math.round(data.current.wind_speed)} m/s`
       tempMinMax.innerHTML = `Min-Max:<br> ${Math.floor(data.daily[0].temp.min)} - ${Math.floor(data.daily[0].temp.max)}`
       document.querySelector('.weather-popup_temp').innerHTML = ` ${Math.round(data.current.temp)}&#8451`;
-      let len=7;
-      
+      let len = 4;
       for(let i = 1; i <= len; i++){
+        var set_temp = document.documentElement.style;
+        set_temp.setProperty('--day_'+ i +'-min',`${Math.round(data.daily[i-1].temp.min)}`+'px');
+        set_temp.setProperty('--day_'+ i +'-max',`${Math.round(data.daily[i-1].temp.max)}`+'px');
+        document.querySelector('.day_'+ i +'_min').innerHTML = `${Math.round(data.daily[i-1].temp.min)}`;
+        document.querySelector('.day_'+ i +'_max').innerHTML = `${Math.round(data.daily[i-1].temp.max)}`;
         let date = new Date(data.daily[i-1].dt * 1000);
         let day = date.getDate();
         let month = date.getMonth();
-        let head = document.createElement('th');
-        head.innerHTML = `${day}/${month+1}`;
-        header.appendChild(head)
-        let min = document.createElement('td');
-        min.innerHTML = `${Math.round(data.daily[i-1].temp.min)}&#8451`;
-        minRow.appendChild(min);
-        let max = document.createElement('td');
-        max.innerHTML = `${Math.round(data.daily[i-1].temp.max)}&#8451`;
-        maxRow.appendChild(max);
-        
+        document.querySelector('.day_date_' + i).innerHTML = `${day}/${month+1}`;
       }
+      // let len=7;
+      
+      // for(let i = 1; i <= len; i++){
+      //   let date = new Date(data.daily[i-1].dt * 1000);
+      //   let day = date.getDate();
+      //   let month = date.getMonth();
+      //   let head = document.createElement('th');
+      //   head.innerHTML = `${day}/${month+1}`;
+      //   header.appendChild(head)
+      //   let min = document.createElement('td');
+      //   min.innerHTML = `${Math.round(data.daily[i-1].temp.min)}&#8451`;
+      //   minRow.appendChild(min);
+      //   let max = document.createElement('td');
+      //   max.innerHTML = `${Math.round(data.daily[i-1].temp.max)}&#8451`;
+      //   maxRow.appendChild(max);
+        
+      // }
     });
     const key_location = 'AIzaSyAfxO-CWu124eg1kEOSBk6cZuRW9p_neKo'
     const url_location = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${key_location}`
@@ -510,11 +522,9 @@ document.querySelector('.search_google_input').addEventListener('keypress', func
 document.querySelector('.ch_border').addEventListener('click', function () {
     if (this.checked == true) {
         document.documentElement.style.setProperty('--border','2px solid var(--text-clr)');
-        document.documentElement.style.setProperty('--icons-height','50px');
         localStorage.setItem('checked','true');
     } else {
-        document.documentElement.style.setProperty('--border','0px solid var(--text-clr)');
-        document.documentElement.style.setProperty('--icons-height','45px');
+        document.documentElement.style.setProperty('--border','2px solid rgba(0,0,0,0)');
         localStorage.setItem('checked','false');
     }
 });
@@ -549,4 +559,13 @@ document.querySelector('.icon_color_input').addEventListener('change', function 
   var a = this.value;
   localStorage.setItem('text_color',a);
   document.documentElement.style.setProperty('--text-clr', a);
+})
+
+document.querySelector('.bookmark_icon_con').addEventListener('click', function (){
+  document.querySelector('.bookmark_container').classList.add('active');
+  this.style.cssText = 'transform: scale(0);';
+})
+document.querySelector('.cross_con').addEventListener('click', function (){
+  document.querySelector('.bookmark_container').classList.remove('active');
+  document.querySelector('.bookmark_icon_con').style.cssText = 'transform: scale(1);';
 })
