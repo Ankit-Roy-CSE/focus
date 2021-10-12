@@ -468,6 +468,48 @@ body {
   grid-template-rows: 1fr 1fr;
   background: rgba(0, 0, 0, 0);
 }
+
+.table-container {
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px auto;
+}
+
+table {
+  position: relative;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 150px;
+  border: 1px solid #bdc3c7;
+  -webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+tr {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+th,
+td {
+  /* padding: 12px; */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  text-align: center;
+}
+
+#header {
+  background-color: var(--cont-clr);
+  color: #fff;
+}
+
 .popup-item {
   background: rgba(255,255,255, .450);
   display: flex;
