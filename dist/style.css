@@ -38,6 +38,101 @@ body {
   width: 100%;
   height: 100vh;
 }
+.bookmark_container
+{
+  width: 340px;
+  height: 180px;
+  background: blue;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: var(--cont-clr);
+  z-index: 2;
+  border-radius: 10px;
+  border: var(--border);
+}
+.bookmark_icon_con,.cross_con
+{
+  width: 40px;
+  height: 40px;
+  background: var(--cont-clr);
+  z-index: 2;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  border-radius: 10px;
+  border: var(--border);
+  cursor: pointer;
+}
+.cross_con
+{
+  left: 5px;
+  top: 5px;
+  height: 35px;
+  width: 35px;
+}
+.cross_line
+{
+  width: 85%;
+  height: 2px;
+  background: var(--text-clr);
+  border-radius: 2px;
+  position: absolute;
+  top: 17px;
+  left: 3px;
+}
+.cross_1
+{
+  transform: rotate(45deg);
+}
+.cross_2
+{
+  transform: rotate(-45deg);
+}
+.bookmark_icon
+{
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bookmarks_img
+{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.bookmark_text
+{
+  font-size: 20px;
+  color: var(--text-clr);
+  position: absolute;
+  left: 50px;
+  top: 12px;
+}
+.bookmarks
+{
+  width: 100px;
+  height: 120px;
+  background: var(--cont-clr);
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+}
+.bookmark_1
+{
+  left: 10px;
+}
+.bookmark_2
+{
+  left: 120px;
+}
+.bookmark_3
+{
+  left: 230px;
+}
 #exit_full_screen_container
 {
   z-index: -1;
@@ -307,6 +402,66 @@ body {
   left: 0px;
   color: var(--text-clr);
 }
+.day_weather_cont
+{
+  position: relative;
+  width: 320px;
+  height: 170px;
+}
+.day_weather
+{
+  width: 35px;
+  background: dodgerblue;
+  opacity: 0.8;
+  height: 45px;
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  border: 2px solid #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.day_2
+{
+  left: calc(45px + 40px);
+  height: 80px;
+}
+.day_3
+{
+  left: calc(2*45px + 40px);
+  height: 25px;
+}
+.day_4
+{
+  left: calc(3*45px + 40px);
+  height: 50px;
+}
+.day_5
+{
+  left: calc(4*45px + 40px);
+  height: 120px;
+}
+.x-axis
+{
+  width: 80%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  border-radius: 2px;
+}
+.y-axis
+{
+  height: 70%;
+  width: 2px;
+  background: #fff;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+  border-radius: 2px;
+}
+
 .weather-grid-item_3{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -400,6 +555,12 @@ body {
 {
   top: 70px;
   font-size: 17px;
+}
+.set_color_text
+{
+  font-size: 15px;
+  top: 175px;
+  left: 95px;
 }
 .ch_border
 {
