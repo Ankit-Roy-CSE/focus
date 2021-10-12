@@ -7,8 +7,15 @@ html{
   --cont-clr: rgba(0,0,0,0);
   --text-clr: #fff;
   --cont-blur: 4px;
-  --border: ;
-  --icons-height: 45px;
+  --border: 2px solid rgba(0,0,0,0);
+  --day_1-min: ;
+  --day_2-min: ;
+  --day_3-min: ;
+  --day_4-min: ;
+  --day_1-max: ;
+  --day_2-max: ;
+  --day_3-max: ;
+  --day_4-max: ;
 }
 body {
   background-repeat: no-repeat;
@@ -41,15 +48,29 @@ body {
 .bookmark_container
 {
   width: 340px;
-  height: 180px;
+  height: 185px;
   background: blue;
   position: absolute;
   top: 25px;
-  left: 25px;
+  left: -250px;
   background: var(--cont-clr);
   z-index: 2;
   border-radius: 10px;
   border: var(--border);
+  transition: 0.3s;
+  transform: scale(0);
+}
+.bookmark_container.active
+{
+  top: 25px;
+  left: 25px;
+  transform: scale(1);
+}
+.bookmark_name
+{
+  color: var(--text-clr);
+  position: relative;
+  top: 22px;
 }
 .bookmark_icon_con,.cross_con
 {
@@ -63,6 +84,7 @@ body {
   border-radius: 10px;
   border: var(--border);
   cursor: pointer;
+  transition: 0.3s;
 }
 .cross_con
 {
@@ -78,8 +100,8 @@ body {
   background: var(--text-clr);
   border-radius: 2px;
   position: absolute;
-  top: 17px;
-  left: 3px;
+  top: 15px;
+  left: 2px;
 }
 .cross_1
 {
@@ -100,9 +122,31 @@ body {
 }
 .bookmarks_img
 {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  position: relative;
+  top: 15px;
+}
+.bookmarks_img_add
+{
+  font-size: 45px;
+  color: #000;
+  background: rgba(255,255,255,0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.bookmarks_img_add p
+{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, -48%);
 }
 .bookmark_text
 {
@@ -114,20 +158,26 @@ body {
 }
 .bookmarks
 {
-  width: 100px;
+  width: 95px;
   height: 120px;
-  background: var(--cont-clr);
+  background: rgba(255, 255, 255, .30);
   border-radius: 10px;
   position: absolute;
   top: 50px;
+  border: var(--border);
+  cursor: pointer;
+}
+.bookmarks:hover
+{
+  background: rgba(255,255,255,0.50);
 }
 .bookmark_1
 {
-  left: 10px;
+  left: 12px;
 }
 .bookmark_2
 {
-  left: 120px;
+  left: 121px;
 }
 .bookmark_3
 {
@@ -143,7 +193,7 @@ body {
   position: absolute;
   right: 30px;
   bottom: 80px;
-  height: var(--icons-height);
+  height: 50px;
   padding: 10px;
   border-radius: 10px;
   background: var(--cont-clr);
@@ -217,8 +267,8 @@ body {
 }
 .open_search_google
 {
-  width: calc(var(--icons-height) + 5px);
-  height: calc(var(--icons-height) + 5px);
+  width: calc(50px + 5px);
+  height: calc(50px + 5px);
   background: var(--cont-clr);
   border-radius: 50% 25%;
   position: absolute;
@@ -402,64 +452,144 @@ body {
   left: 0px;
   color: var(--text-clr);
 }
-.day_weather_cont
+.table-container
 {
-  position: relative;
   width: 320px;
   height: 170px;
+  position: relative;
 }
-.day_weather
+.weather-table
 {
-  width: 35px;
-  background: dodgerblue;
-  opacity: 0.8;
-  height: 45px;
+  width: 290px;
+  height: 140px;
   position: absolute;
-  bottom: 20px;
-  left: 40px;
-  border: 2px solid #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 0;
+}
+.weather_day_table
+{
+  position: absolute;
+  width: 90%;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.weather_day_table td
+{
+  font-size: 12px;
+  padding: 0px 10px;
+  color: var(--text-clr);
+}
+.min_bar
+{
+  background: orange;
+  position: absolute;
+  bottom: 2px;
+  width: 40%;
+  left: 10%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #fff;
+}
+.max_bar
+{
+  background: dodgerblue;
+  position: absolute;
+  bottom: 2px;
+  width: 40%;
+  left: 50%;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  color: #fff;
+}
+.day_1_min
+{
+  height: calc(2*var(--day_1-min));
+}
+.day_1_max
+{
+  height: calc(2*var(--day_1-max));
+}
+.day_2_min
+{
+  height: calc(2*var(--day_2-min));
+}
+.day_2_max
+{
+  height: calc(2*var(--day_2-max));
+}
+.day_3_min
+{
+  height: calc(2*var(--day_3-min));
+}
+.day_3_max
+{
+  height: calc(2*var(--day_3-max));
+}
+.day_4_min
+{
+  height: calc(2*var(--day_4-min));
+}
+.day_4_max
+{
+  height: calc(2*var(--day_4-max));
+}
+.days
+{
+  width: 25%;
+  height: 100%;
+  position: absolute;
 }
 .day_2
 {
-  left: calc(45px + 40px);
-  height: 80px;
+  left: 25%;
 }
 .day_3
 {
-  left: calc(2*45px + 40px);
-  height: 25px;
+  left: 50%;
 }
 .day_4
 {
-  left: calc(3*45px + 40px);
-  height: 50px;
+  left: 75%;
 }
-.day_5
+.legend
 {
-  left: calc(4*45px + 40px);
-  height: 120px;
+  width: 100px;
+  height: 35px;
+  position: relative;
+  left: 5px;
+  top: 5px;
 }
-.x-axis
+.legend_text
 {
-  width: 80%;
-  height: 2px;
-  background: #fff;
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
-  border-radius: 2px;
+  font-size: 12px;
+  position: relative;
+  top: -5px;
 }
-.y-axis
+.legend_1,.legend_2
 {
-  height: 70%;
-  width: 2px;
-  background: #fff;
-  position: absolute;
-  left: 30px;
-  bottom: 20px;
-  border-radius: 2px;
+  width: 100%;
+  height: 50%;
+  color: var(--text-clr);
+}
+.legend_1_color
+{
+  width: 7px;
+  height: 7px;
+  background: orange;
+  position: relative;
+  top: 5px;
+  left: 12px;
+}
+.legend_2_color
+{
+  width: 7px;
+  height: 7px;
+  background: dodgerblue;
+  position: relative;
+  top: 5px;
+  left: 12px;
 }
 
 .weather-grid-item_3{
@@ -468,48 +598,6 @@ body {
   grid-template-rows: 1fr 1fr;
   background: rgba(0, 0, 0, 0);
 }
-
-.table-container {
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 10px auto;
-}
-
-table {
-  position: relative;
-  border-collapse: collapse;
-  width: 80%;
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 150px;
-  border: 1px solid #bdc3c7;
-  -webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-}
-
-tr {
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-  cursor: pointer;
-}
-
-th,
-td {
-  /* padding: 12px; */
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  text-align: center;
-}
-
-#header {
-  background-color: var(--cont-clr);
-  color: #fff;
-}
-
 .popup-item {
   background: rgba(255,255,255, .450);
   display: flex;
@@ -746,7 +834,7 @@ h2 {
   position: absolute;
   right: 30px;
   bottom: 25px;
-  height: var(--icons-height);
+  height: 50px;
   padding: 10px;
   border-radius: 10px;
   background: var(--cont-clr);
