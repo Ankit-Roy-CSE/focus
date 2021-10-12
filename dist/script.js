@@ -372,7 +372,7 @@ window.addEventListener('keypress', function(e){
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
-            end calculator app
+             end calculator app
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
 ---------------------------           -------          --------------------------
@@ -441,11 +441,6 @@ setInterval(breathAnimation, totalTime);
 ---------------------------           -------          --------------------------
 */
 
-
-//Weather Toggle
-weather.addEventListener('click', function () {
-  weatherPop.classList.toggle('active');
-})
 
 var ch_blur = document.querySelector('.ch_blur');
 ch_blur.addEventListener('change', function () {

@@ -11,6 +11,38 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
+<div class="bookmark_icon_con">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="bookmark_icon">
+    <use href="#bookmark_icon_id"></use>
+  </svg>
+</div>
+<div class="bookmark_container">
+  <div class="cross_con">
+    <div class="cross_line cross_1"></div>
+    <div class="cross_line cross_2"></div>
+  </div>
+  <p class="bookmark_text">Your Bookmarks</p>
+  <div class="bookmarks bookmark_1">
+    <div>
+      <img class="bookmarks_img" src="C:\Users\Subrata Chowdhury\Pictures\Hololive Wallpapers\Inugami_Korone_Portrait.png">
+    </div>
+    <div>Add</div>
+  </div>
+  <div class="bookmarks bookmark_2">
+    <div>
+      <img class="bookmarks_img" src="C:\Users\Subrata Chowdhury\Pictures\Hololive Wallpapers\Inugami_Korone_Portrait.png">
+    </div>
+    <div>Add</div>
+  </div>
+  <div class="bookmarks bookmark_3">
+    <div>
+      <img class="bookmarks_img" src="C:\Users\Subrata Chowdhury\Pictures\Hololive Wallpapers\Inugami_Korone_Portrait.png">
+    </div>
+    <div>Add</div>
+  </div>
+</div>
   <div class="open_search_google" title="Click Here for Search">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
@@ -26,12 +58,12 @@
         <use href="#search_icon_id"></use>
       </svg>
   </div>
-  <div class="weather-container app" >
+  <div class="weather-container app" data-app="0">
     <div class="weather-temp">23&#8451</div>
     <div class="weather-location">Kolkata</div>
   </div>
 
-  <div class="weather-popup app_con">
+  <div class="weather-popup app_con" data-app_id="0">
     <div class="title_bar">
       <div class="title">Weather</div>
       <div class="control">
@@ -118,12 +150,13 @@
     <div class="ch_color_div black" data-color="rgba(0, 0, 0, 0.50)" data-iconcolor="#fff" title="Black"></div>
     <div class="ch_color_div dodblue" data-color="rgba(170, 212, 253, 0.3)" data-iconcolor="#fff" title="Light Blue"></div>
     <div class="ch_color_div no_color" data-color="rgba(255,255, 255, 0.0)" data-iconcolor="#fff" title="Transparent (bydefalt)"></div>
-    <input class="cont_color_input" type="color" title="Select Color" name="">
     <p class="ch_color_text ch_blur_text">Change Blurity</p>
     <input type="range" max="20" min="0" value="4" class="ch_blur" name="" title="Change Blurity">
     <p class="ch_color_text">Border</p>
     <input type="checkbox" class="ch_border" title="Border" name="">
     <div class="reset">Reset</div>
+    <p class="ch_color_text set_color_text">Set your<br>own colors</p>
+    <input class="cont_color_input" type="color" title="Select Color" name="">
     <input class="icon_color_input" type="color" title="Select Icon Color" name="">
   </div>
   <div class="setting_container" id="setting_container" title="Customize">
@@ -405,6 +438,21 @@
     -41 120 -58 216 -64 355 -20 477 231 914 658 1144 112 61 245 103 419 135 14
     2 99 3 190 1 126 -2 185 -8 250 -24z"/>
     </g>
+  </svg>
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="bookmark_icon" style="display: none;">
+
+  <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+  fill="#000000" stroke="none" id="bookmark_icon_id" class="bookmark_icon_g icon_g">
+  <path d="M895 5106 c-40 -18 -73 -56 -85 -97 -15 -50 -13 -4841 1 -4894 21
+  -78 96 -125 176 -111 34 7 117 86 805 774 l768 767 767 -767 c673 -672 773
+  -767 805 -773 87 -16 160 32 178 118 8 38 10 720 8 2474 l-3 2422 -21 27 c-11
+  15 -33 37 -48 48 -27 21 -28 21 -1674 23 -1357 2 -1652 0 -1677 -11z m3125
+  -2436 c0 -1182 -3 -2150 -8 -2150 -4 0 -315 308 -692 685 -567 568 -691 687
+  -722 696 -84 22 -58 44 -798 -696 -377 -377 -688 -685 -692 -685 -5 0 -8 968
+  -8 2150 l0 2150 1460 0 1460 0 0 -2150z"/>
+  </g>
   </svg>
   <script  src="./script.js"></script>
 </body>
