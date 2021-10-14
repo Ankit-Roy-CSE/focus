@@ -71,7 +71,7 @@ body {
 {
   color: var(--text-clr);
   position: relative;
-  top: 22px;
+  top: 25px;
 }
 .bookmark_icon_con,.cross_con
 {
@@ -185,7 +185,7 @@ body {
 {
   left: 230px;
 }
-.edit_link_input
+.delete_link_input
 {
   width: 20px;
   height: 20px;
@@ -196,19 +196,19 @@ body {
   top: 55px;
   z-index: 3;
 }
-.edit_link_input[data-edit_link_id="1"]
+.delete_link_input[data-delete_link_id="1"]
 {
   left: 80px;
 }
-.edit_link_input[data-edit_link_id="2"]
+.delete_link_input[data-delete_link_id="2"]
 {
   left: 190px;
 }
-.edit_link_input[data-edit_link_id="3"]
+.delete_link_input[data-delete_link_id="3"]
 {
   left: 300px;
 }
-.edit_link_input:hover
+.delete_link_input:hover
 {
   background: rgba(255, 255, 255, .50);
 }
@@ -217,7 +217,7 @@ body {
   width: 300px;
   height: 230px;
   backdrop-filter: blur(var(--cont-blur));
-  background: var(--cont-clr);
+  background: rgba(255,255,255,.50);
   position: absolute;
   left: 50%;
   top: -800px;
@@ -228,18 +228,6 @@ body {
   z-index: 4;
   transition: 0.2s;
 }
-.bookmark_link_input_con::after
-{
-  content: '';
-  width: 300px;
-  height: 230px;
-  background: rgba(0, 0, 0, .50);
-  border-radius: 10px;
-  position: absolute;
-  left: -2px;
-  top: -2px;  
-  z-index: -1;
-}
 .bookmark_link_input_con.active
 {
   top: 50%;
@@ -248,7 +236,7 @@ body {
 .bookmark_link_input_con p
 {
   font-size: 18px;
-  color: var(--text-clr);
+  color: #000;
   position: absolute;
   left: 45px;
 }
@@ -271,18 +259,18 @@ body {
   transform: translate(-50%, 0%);
   background: transparent;
   border: none;
-  border-bottom: 2px solid var(--text-clr);
-  color: var(--text-clr);
+  border-bottom: 2px solid #000;
+  color: #000;
   padding: 0px 5px;
 }
 .bookmark_link_input
 {
   top: 115px;
 }
-.edit_icon
+.delete_icon
 {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -731,6 +719,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-clr);
 }
 .ch_color
 {
@@ -871,7 +860,7 @@ body {
   padding: 7px 0px;
   border-radius: 10px;
   border: 2px solid var(--text-clr);
-  width: 75px;
+  width: 90px;
   color: #fff;
   cursor: pointer;
   position: absolute;

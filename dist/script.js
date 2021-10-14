@@ -579,6 +579,8 @@ document.querySelectorAll('.bookmarks').forEach(function (bookmark) {
       var save_btn = document.querySelector('.input_link_save');
       save_btn.dataset.input_save_id = bookmark.dataset.link_id;
       open_input_link_save_con();
+      document.querySelector('.bookmark_name_input').value = '';
+      document.querySelector('.bookmark_link_input').value = '';
     } else {
       document.querySelector('.search_google_input').value = bookmark.dataset.link;
       search_js();
@@ -646,3 +648,12 @@ function refresh_link_input_name(){
   }
 }
 setInterval(refresh_link_input_name,1000);
+
+document.querySelectorAll('.delete_link_input').forEach(function(del){
+  del.addEventListener('click',function () {
+    var a = del.dataset.delete_link_id;
+    localStorage.removeItem('bookmark_name_' + a);
+    localStorage.removeItem('bookmark_link_' + a);
+    window.location.reload();
+  })
+})

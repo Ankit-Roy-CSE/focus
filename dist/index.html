@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="bookmark_icon_con">
+<div class="bookmark_icon_con" title="Bookmarks">
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
  preserveAspectRatio="xMidYMid meet" class="bookmark_icon">
@@ -19,16 +19,16 @@
   </svg>
 </div>
 <div class="bookmark_container">
-  <div class="cross_con">
+  <div class="cross_con" title="Close">
     <div class="cross_line cross_1"></div>
     <div class="cross_line cross_2"></div>
   </div>
   <p class="bookmark_text">Your Bookmarks</p>
-  <div class="edit_link_input" data-edit_link_id="1">
+  <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="1">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="edit_icon">
-      <use href="#edit_icon_id"></use>
+ preserveAspectRatio="xMidYMid meet" class="delete_icon">
+      <use href="#delete_icon_id"></use>
     </svg>
   </div>
   <div class="bookmarks bookmark_1" data-link=" " data-link_id="1">
@@ -38,11 +38,11 @@
     </div>
     <div class="bookmark_name link_name_1" data-link_name=" " data-link_name_id='1'>Add</div>
   </div>
-  <div class="edit_link_input" data-edit_link_id="2">
+  <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="2">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="edit_icon">
-      <use href="#edit_icon_id"></use>
+ preserveAspectRatio="xMidYMid meet" class="delete_icon">
+      <use href="#delete_icon_id"></use>
     </svg>
   </div>
   <div class="bookmarks bookmark_2" data-link=" " data-link_id="2">
@@ -52,11 +52,11 @@
     </div>
     <div class="bookmark_name link_name_2" data-link_name=" " data-link_name_id='2'>Add</div>
   </div>
-  <div class="edit_link_input" data-edit_link_id="3">
+  <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="3">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="edit_icon">
-      <use href="#edit_icon_id"></use>
+ preserveAspectRatio="xMidYMid meet" class="delete_icon">
+      <use href="#delete_icon_id"></use>
     </svg>
   </div>
   <div class="bookmarks bookmark_3" data-link=" " data-link_id="3">
@@ -194,7 +194,7 @@
     <input type="range" max="20" min="0" value="4" class="ch_blur" name="" title="Change Blurity">
     <p class="ch_color_text">Border</p>
     <input type="checkbox" class="ch_border" title="Border" name="">
-    <div class="reset">Reset</div>
+    <div class="reset" title="including bookmarks & settings">Reset All</div>
     <p class="ch_color_text set_color_text">Set your<br>own colors</p>
     <input class="cont_color_input" type="color" title="Select Color" name="">
     <input class="icon_color_input" type="color" title="Select Icon Color" name="">
@@ -496,19 +496,29 @@
   </svg>
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="edit_icon" style="display: none;">
+ preserveAspectRatio="xMidYMid meet" class="delete_icon" style="display: none;">
 
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-    fill="#000000" stroke="none" id="edit_icon_id">
-    <path d="M3816 5110 c-112 -29 -69 12 -1887 -1808 -1648 -1649 -1737 -1740
-    -1763 -1800 -24 -56 -36 -128 -97 -590 -46 -342 -69 -547 -66 -583 14 -167
-    159 -312 325 -326 38 -3 237 19 587 66 523 69 530 71 600 105 66 33 165 130
-    1806 1773 1655 1657 1737 1741 1765 1803 25 57 29 77 29 160 0 87 -3 101 -33
-    165 -31 65 -64 101 -485 522 -417 417 -457 454 -520 483 -74 35 -188 48 -261
-    30z m429 -870 l330 -330 -255 -255 -255 -255 -332 332 -333 333 252 252 c139
-    139 255 253 258 253 3 0 154 -148 335 -330z m-860 -860 l330 -330 -1215 -1214
-    -1215 -1215 -350 -45 c-454 -58 -410 -55 -408 -31 1 11 23 182 48 380 l47 360
-    1211 1213 c667 666 1214 1212 1217 1212 3 0 154 -149 335 -330z"/>
+    fill="#000000" stroke="none" id="delete_icon_id">
+    <path d="M1870 4901 c-72 -23 -119 -63 -145 -123 -12 -30 -15 -83 -15 -272 l0
+    -235 -457 -3 -458 -3 -47 -28 c-84 -49 -124 -150 -98 -245 15 -56 80 -123 136
+    -140 60 -18 3488 -18 3548 0 57 17 119 82 135 141 27 95 -13 195 -97 244 l-47
+    28 -457 3 -458 3 0 235 c0 189 -3 242 -15 272 -20 47 -50 78 -100 105 -40 22
+    -45 22 -720 24 -374 1 -691 -2 -705 -6z m1120 -526 l0 -105 -430 0 -430 0 0
+    105 0 105 430 0 430 0 0 -105z"/>
+    <path d="M1008 3618 c-21 -5 -58 -28 -83 -50 -81 -71 -76 20 -73 -1394 l3
+    -1249 23 -80 c29 -107 99 -246 162 -323 107 -131 271 -236 445 -285 l80 -22
+    995 0 995 0 80 22 c174 49 338 154 445 285 63 77 133 216 162 323 l23 80 3
+    1240 c2 890 0 1255 -8 1292 -8 36 -23 65 -51 97 -99 113 -276 89 -343 -45
+    l-26 -53 0 -1232 c0 -1200 -1 -1234 -20 -1296 -39 -128 -140 -228 -269 -269
+    -60 -18 -99 -19 -991 -19 -897 0 -930 1 -992 20 -128 39 -228 140 -269 269
+    -18 61 -19 102 -19 1296 l0 1233 -28 53 c-46 89 -149 134 -244 107z"/>
+    <path d="M2062 3189 c-46 -14 -118 -88 -131 -135 -15 -54 -15 -1574 0 -1628
+    15 -54 83 -119 142 -135 95 -27 195 13 244 97 l28 47 0 805 0 805 -28 47 c-49
+    84 -160 126 -255 97z"/>
+    <path d="M2889 3172 c-39 -20 -62 -41 -84 -77 l-30 -48 0 -806 0 -806 28 -47
+    c49 -84 149 -124 244 -97 59 16 124 78 141 135 17 59 17 1569 0 1628 -16 53
+    -81 118 -134 134 -64 19 -107 15 -165 -16z"/>
     </g>
   </svg>
   <script  src="./script.js"></script>
