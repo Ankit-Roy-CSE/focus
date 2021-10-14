@@ -11,53 +11,70 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="bookmark_icon_con">
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="bookmark_icon">
+<div class="bookmark_icon_con" title="Bookmarks">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="bookmark_icon">
     <use href="#bookmark_icon_id"></use>
   </svg>
 </div>
 <div class="bookmark_container">
-  <div class="cross_con">
+  <div class="cross_con" title="Close">
     <div class="cross_line cross_1"></div>
     <div class="cross_line cross_2"></div>
   </div>
   <p class="bookmark_text">Your Bookmarks</p>
-  <div class="bookmarks bookmark_1">
-    <div class="bookmarks_img_add">
-      <p>+</p>
-      <!-- <img class="bookmarks_img" src=""> -->
-    </div>
-    <div class="bookmark_name">Add</div>
+  <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="1">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon">
+      <use href="#delete_icon_id"></use>
+    </svg>
   </div>
-  <div class="bookmarks bookmark_2">
+  <div class="bookmarks bookmark_1" data-link=" " data-link_id="1">
     <div class="bookmarks_img_add">
-      <p>+</p>
+      <p class="short_link_name_icon_1">+</p>
       <!-- <img class="bookmarks_img" src=""> -->
     </div>
-    <div class="bookmark_name">Add</div>
+    <div class="bookmark_name link_name_1" data-link_name=" " data-link_name_id='1'>Add</div>
   </div>
-  <div class="bookmarks bookmark_3">
+  <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="2">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon">
+      <use href="#delete_icon_id"></use>
+    </svg>
+  </div>
+  <div class="bookmarks bookmark_2" data-link=" " data-link_id="2">
     <div class="bookmarks_img_add">
-      <p>+</p>
+      <p class="short_link_name_icon_2">+</p>
       <!-- <img class="bookmarks_img" src=""> -->
     </div>
-    <div class="bookmark_name">Add</div>
+    <div class="bookmark_name link_name_2" data-link_name=" " data-link_name_id='2'>Add</div>
+  </div>
+  <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="3">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon">
+      <use href="#delete_icon_id"></use>
+    </svg>
+  </div>
+  <div class="bookmarks bookmark_3" data-link=" " data-link_id="3">
+    <div class="bookmarks_img_add">
+      <p class="short_link_name_icon_3">+</p>
+      <!-- <img class="bookmarks_img" src=""> -->
+    </div>
+    <div class="bookmark_name link_name_3" data-link_name=" " data-link_name_id='3'>Add</div>
   </div>
 </div>
+<div class="bookmark_link_input_con">
+  <p>Name</p>
+  <input type="text" class="bookmark_name_input" name="">
+  <p>URL</p>
+  <input type="text" class="bookmark_link_input" name="">
+  <div class="input_link_cancel">Cancel</div>
+  <div class="input_link_save" data-input_save_id="">Save</div>
+</div>
   <div class="open_search_google" title="Click Here for Search">
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="down_arrow">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="down_arrow">
       <use href="#down_icon_id"></use>
     </svg>
   </div>
   <div class="search_google">
     <input type="text" class="search_google_input" name="" placeholder="Search or type a URL">
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="search_icon" onclick="search_js();">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="search_icon" onclick="search_js();">
         <use href="#search_icon_id"></use>
       </svg>
   </div>
@@ -102,6 +119,9 @@
             <p class="legend_text">Max Temp</p>
           </div>
         </div>
+        <div class="legend_right">
+          <p class="legend_unit">Unit: &#8451</p>
+        </div>
         <table class="weather_day_table" cellpadding="10">
           <td class="day_date_1">Day 1</td>
           <td class="day_date_2">Day 2</td>
@@ -133,16 +153,12 @@
 
   <div class="bg_img" id="bg_img"></div>
   <div class="full_screen_container" id="full_screen_container" title="Full Screen">
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="full_screen">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="full_screen">
       <use href="#full_screen_icon"></use>
     </svg>
   </div>
   <div class="full_screen_container" id="exit_full_screen_container" title="Exit Full Screen">
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="full_screen">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="full_screen">
       <use href="#exit_full_screen_icon"></use>
     </svg>
   </div>
@@ -165,37 +181,30 @@
     <input type="range" max="20" min="0" value="4" class="ch_blur" name="" title="Change Blurity">
     <p class="ch_color_text">Border</p>
     <input type="checkbox" class="ch_border" title="Border" name="">
-    <div class="reset">Reset</div>
+    <div class="reset" title="including bookmarks & settings">Reset All</div>
     <p class="ch_color_text set_color_text">Set your<br>own colors</p>
     <input class="cont_color_input" type="color" title="Select Color" name="">
     <input class="icon_color_input" type="color" title="Select Icon Color" name="">
   </div>
   <div class="setting_container" id="setting_container" title="Customize">
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="setting_icon">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="setting_icon">
       <use href="#setting_icon"></use>
     </svg>
   </div>
   <div class="open_menubar_div" title="Menu"><div class="open_menubar">+</div></div>
   <div class="menu" id="menu">
     <div class="menu_icon app" data-app="1" title="Calculator">
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="container_icon">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="container_icon">
         <use href="#menu_icon_1"></use>
       </svg>
     </div>
     <div class="menu_icon app" data-app="2" title="Relax">
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
- preserveAspectRatio="xMidYMid meet" class="container_icon">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" class="container_icon">
         <use href="#menu_icon_2"></use>
       </svg>
     </div>
     <div class="menu_icon app" data-app="3" title="Notes">
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="container_icon">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="container_icon">
         <use href="#menu_icon_3"></use>
       </svg>
     </div>
@@ -264,9 +273,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="full_screen" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="full_screen" style="display: none;">
 
     <g id="full_screen_icon" transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
       fill="#fff" class="icon_g" stroke="none">
@@ -285,9 +292,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="full_screen" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="full_screen" style="display: none;">
  
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
       fill="#fff" id="exit_full_screen_icon" class="icon_g" stroke="none">
@@ -306,9 +311,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="setting_icon" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="setting_icon" style="display: none;">
 
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
       fill="#fff" id="setting_icon" class="icon_g" stroke="none">
@@ -325,8 +328,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="container_icon" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="container_icon" style="display: none;">
 
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
       fill="#fff" id="menu_icon_1" class="icon_g" stroke="none">
@@ -351,9 +353,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
- preserveAspectRatio="xMidYMid meet" class="container_icon" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000" preserveAspectRatio="xMidYMid meet" class="container_icon" style="display: none;">
 
     <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
       fill="#fff" id="menu_icon_2" class="icon_g" stroke="none">
@@ -370,9 +370,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="container_icon" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="container_icon" style="display: none;">
 
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
     fill="#fff" id="menu_icon_3" class="icon_g" stroke="none">
@@ -401,13 +399,13 @@
       </g>
     </g>
   </svg>
-    <!------------------------------------------
-    --------------------------------------------
-    --------------------------------------------
+  <!------------------------------------------
+   --------------------------------------------
+   --------------------------------------------
                   search icon              
-    --------------------------------------------
-    --------------------------------------------
-    -------------------------------------------->
+   --------------------------------------------
+   --------------------------------------------
+   -------------------------------------------->
 
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
      width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
@@ -432,9 +430,7 @@
     --------------------------------------------
     -------------------------------------------->
 
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="search_icon" style="display: none;">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="search_icon" style="display: none;">
 
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
     fill="#000000" class="icon_g" id="search_icon_id" stroke="none">
@@ -450,20 +446,56 @@
     2 99 3 190 1 126 -2 185 -8 250 -24z"/>
     </g>
   </svg>
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet" class="bookmark_icon" style="display: none;">
+  <!--------------------------------------------
+    --------------------------------------------
+    --------------------------------------------
+                  bookmark icon              
+    --------------------------------------------
+    --------------------------------------------
+    -------------------------------------------->
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="bookmark_icon" style="display: none;">
 
-  <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-  fill="#000000" stroke="none" id="bookmark_icon_id" class="bookmark_icon_g icon_g">
-  <path d="M895 5106 c-40 -18 -73 -56 -85 -97 -15 -50 -13 -4841 1 -4894 21
-  -78 96 -125 176 -111 34 7 117 86 805 774 l768 767 767 -767 c673 -672 773
-  -767 805 -773 87 -16 160 32 178 118 8 38 10 720 8 2474 l-3 2422 -21 27 c-11
-  15 -33 37 -48 48 -27 21 -28 21 -1674 23 -1357 2 -1652 0 -1677 -11z m3125
-  -2436 c0 -1182 -3 -2150 -8 -2150 -4 0 -315 308 -692 685 -567 568 -691 687
-  -722 696 -84 22 -58 44 -798 -696 -377 -377 -688 -685 -692 -685 -5 0 -8 968
-  -8 2150 l0 2150 1460 0 1460 0 0 -2150z"/>
-  </g>
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none" id="bookmark_icon_id" class="bookmark_icon_g icon_g">
+    <path d="M973 5105 c-134 -36 -241 -123 -300 -243 l-38 -76 -3 -2275 c-2
+    -2502 -7 -2330 58 -2420 37 -51 115 -91 177 -91 57 0 133 30 196 78 29 22 347
+    290 707 597 360 306 669 564 685 573 42 23 188 23 230 0 17 -9 329 -272 695
+    -584 366 -311 685 -582 710 -600 144 -106 304 -74 374 76 l21 45 3 2275 c3
+    2542 9 2340 -68 2458 -61 95 -162 166 -271 191 -29 7 -580 10 -1584 10 -1293
+    0 -1548 -3 -1592 -14z"/>
+    </g>
+  </svg>
+  <!--------------------------------------------
+    --------------------------------------------
+    --------------------------------------------
+                  delete icon              
+    --------------------------------------------
+    --------------------------------------------
+    -------------------------------------------->
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon" style="display: none;">
+
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none" id="delete_icon_id">
+    <path d="M1870 4901 c-72 -23 -119 -63 -145 -123 -12 -30 -15 -83 -15 -272 l0
+    -235 -457 -3 -458 -3 -47 -28 c-84 -49 -124 -150 -98 -245 15 -56 80 -123 136
+    -140 60 -18 3488 -18 3548 0 57 17 119 82 135 141 27 95 -13 195 -97 244 l-47
+    28 -457 3 -458 3 0 235 c0 189 -3 242 -15 272 -20 47 -50 78 -100 105 -40 22
+    -45 22 -720 24 -374 1 -691 -2 -705 -6z m1120 -526 l0 -105 -430 0 -430 0 0
+    105 0 105 430 0 430 0 0 -105z"/>
+    <path d="M1008 3618 c-21 -5 -58 -28 -83 -50 -81 -71 -76 20 -73 -1394 l3
+    -1249 23 -80 c29 -107 99 -246 162 -323 107 -131 271 -236 445 -285 l80 -22
+    995 0 995 0 80 22 c174 49 338 154 445 285 63 77 133 216 162 323 l23 80 3
+    1240 c2 890 0 1255 -8 1292 -8 36 -23 65 -51 97 -99 113 -276 89 -343 -45
+    l-26 -53 0 -1232 c0 -1200 -1 -1234 -20 -1296 -39 -128 -140 -228 -269 -269
+    -60 -18 -99 -19 -991 -19 -897 0 -930 1 -992 20 -128 39 -228 140 -269 269
+    -18 61 -19 102 -19 1296 l0 1233 -28 53 c-46 89 -149 134 -244 107z"/>
+    <path d="M2062 3189 c-46 -14 -118 -88 -131 -135 -15 -54 -15 -1574 0 -1628
+    15 -54 83 -119 142 -135 95 -27 195 13 244 97 l28 47 0 805 0 805 -28 47 c-49
+    84 -160 126 -255 97z"/>
+    <path d="M2889 3172 c-39 -20 -62 -41 -84 -77 l-30 -48 0 -806 0 -806 28 -47
+    c49 -84 149 -124 244 -97 59 16 124 78 141 135 17 59 17 1569 0 1628 -16 53
+    -81 118 -134 134 -64 19 -107 15 -165 -16z"/>
+    </g>
   </svg>
   <script  src="./script.js"></script>
 </body>

@@ -53,6 +53,7 @@ body {
   position: absolute;
   top: 25px;
   left: -250px;
+  backdrop-filter: blur(var(--cont-blur));
   background: var(--cont-clr);
   z-index: 2;
   border-radius: 10px;
@@ -70,7 +71,7 @@ body {
 {
   color: var(--text-clr);
   position: relative;
-  top: 22px;
+  top: 25px;
 }
 .bookmark_icon_con,.cross_con
 {
@@ -183,6 +184,120 @@ body {
 .bookmark_3
 {
   left: 230px;
+}
+.delete_link_input
+{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .30);
+  position: absolute;
+  right: 4px;
+  top: 55px;
+  z-index: 3;
+}
+.delete_link_input[data-delete_link_id="1"]
+{
+  left: 80px;
+}
+.delete_link_input[data-delete_link_id="2"]
+{
+  left: 190px;
+}
+.delete_link_input[data-delete_link_id="3"]
+{
+  left: 300px;
+}
+.delete_link_input:hover
+{
+  background: rgba(255, 255, 255, .50);
+}
+.bookmark_link_input_con
+{
+  width: 300px;
+  height: 230px;
+  backdrop-filter: blur(var(--cont-blur));
+  background: rgba(255,255,255,.50);
+  position: absolute;
+  left: 50%;
+  top: -800px;
+  transform: scale(0) translate(-50%,-50%);
+  border-radius: 10px;
+  border: var(--border);
+  box-shadow: 0 0 15px 100vh rgba(0, 0, 0, .30);  
+  z-index: 4;
+  transition: 0.2s;
+}
+.bookmark_link_input_con.active
+{
+  top: 50%;
+  transform: scale(1) translate(-50%,-50%);
+}
+.bookmark_link_input_con p
+{
+  font-size: 18px;
+  color: #000;
+  position: absolute;
+  left: 45px;
+}
+.bookmark_link_input_con p:nth-child(1)
+{
+  top: 25px;
+}
+.bookmark_link_input_con p:nth-child(3)
+{
+  top: 95px;
+}
+.bookmark_name_input,.bookmark_link_input
+{
+  height: 30px;
+  width: 70%;
+  outline: none;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+  color: #000;
+  padding: 0px 5px;
+}
+.bookmark_link_input
+{
+  top: 115px;
+}
+.delete_icon
+{
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.input_link_save
+{
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 15px;
+  background: dodgerblue;
+  border-radius: 10px;
+  color: #fff;
+  right: 45px;
+  cursor: pointer;
+}
+.input_link_cancel
+{
+  position: absolute;
+  bottom: 20px;
+  padding: 8px 13px;
+  background: #fff;
+  border-radius: 10px;
+  color: dodgerblue;
+  right: 130px;
+  border: 2px solid dodgerblue;
+  cursor: pointer;
 }
 #exit_full_screen_container
 {
@@ -374,7 +489,7 @@ body {
 {
   min-width: 50px;
   min-height: 50px;
-  background: rgba(255, 255, 255, .30);
+  background: rgba(255, 255, 255, .50);
   border-radius: 10px;
 }
 
@@ -492,6 +607,9 @@ body {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .max_bar
 {
@@ -503,6 +621,9 @@ body {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .day_1_min
 {
@@ -592,6 +713,17 @@ body {
   top: 5px;
   left: 12px;
 }
+.legend_right
+{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.legend_unit
+{
+  color: var(--text-clr);
+  font-size: 12px;
+}
 
 .weather-grid-item_3{
   display: grid;
@@ -604,6 +736,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-clr);
 }
 .ch_color
 {
@@ -744,7 +877,7 @@ body {
   padding: 7px 0px;
   border-radius: 10px;
   border: 2px solid var(--text-clr);
-  width: 75px;
+  width: 90px;
   color: #fff;
   cursor: pointer;
   position: absolute;
