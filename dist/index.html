@@ -24,27 +24,56 @@
     <div class="cross_line cross_2"></div>
   </div>
   <p class="bookmark_text">Your Bookmarks</p>
-  <div class="bookmarks bookmark_1">
+  <div class="edit_link_input" data-edit_link_id="1">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="edit_icon">
+      <use href="#edit_icon_id"></use>
+    </svg>
+  </div>
+  <div class="bookmarks bookmark_1" data-link=" " data-link_id="1">
     <div class="bookmarks_img_add">
-      <p>+</p>
+      <p class="short_link_name_icon_1">+</p>
       <!-- <img class="bookmarks_img" src=""> -->
     </div>
-    <div class="bookmark_name">Add</div>
+    <div class="bookmark_name link_name_1" data-link_name=" " data-link_name_id='1'>Add</div>
   </div>
-  <div class="bookmarks bookmark_2">
+  <div class="edit_link_input" data-edit_link_id="2">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="edit_icon">
+      <use href="#edit_icon_id"></use>
+    </svg>
+  </div>
+  <div class="bookmarks bookmark_2" data-link=" " data-link_id="2">
     <div class="bookmarks_img_add">
-      <p>+</p>
+      <p class="short_link_name_icon_2">+</p>
       <!-- <img class="bookmarks_img" src=""> -->
     </div>
-    <div class="bookmark_name">Add</div>
+    <div class="bookmark_name link_name_2" data-link_name=" " data-link_name_id='2'>Add</div>
   </div>
-  <div class="bookmarks bookmark_3">
+  <div class="edit_link_input" data-edit_link_id="3">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="edit_icon">
+      <use href="#edit_icon_id"></use>
+    </svg>
+  </div>
+  <div class="bookmarks bookmark_3" data-link=" " data-link_id="3">
     <div class="bookmarks_img_add">
-      <p>+</p>
+      <p class="short_link_name_icon_3">+</p>
       <!-- <img class="bookmarks_img" src=""> -->
     </div>
-    <div class="bookmark_name">Add</div>
+    <div class="bookmark_name link_name_3" data-link_name=" " data-link_name_id='3'>Add</div>
   </div>
+</div>
+<div class="bookmark_link_input_con">
+  <p>Name</p>
+  <input type="text" class="bookmark_name_input" name="">
+  <p>URL</p>
+  <input type="text" class="bookmark_link_input" name="">
+  <div class="input_link_cancel">Cancel</div>
+  <div class="input_link_save" data-input_save_id="">Save</div>
 </div>
   <div class="open_search_google" title="Click Here for Search">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -454,16 +483,33 @@
  width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
  preserveAspectRatio="xMidYMid meet" class="bookmark_icon" style="display: none;">
 
-  <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-  fill="#000000" stroke="none" id="bookmark_icon_id" class="bookmark_icon_g icon_g">
-  <path d="M895 5106 c-40 -18 -73 -56 -85 -97 -15 -50 -13 -4841 1 -4894 21
-  -78 96 -125 176 -111 34 7 117 86 805 774 l768 767 767 -767 c673 -672 773
-  -767 805 -773 87 -16 160 32 178 118 8 38 10 720 8 2474 l-3 2422 -21 27 c-11
-  15 -33 37 -48 48 -27 21 -28 21 -1674 23 -1357 2 -1652 0 -1677 -11z m3125
-  -2436 c0 -1182 -3 -2150 -8 -2150 -4 0 -315 308 -692 685 -567 568 -691 687
-  -722 696 -84 22 -58 44 -798 -696 -377 -377 -688 -685 -692 -685 -5 0 -8 968
-  -8 2150 l0 2150 1460 0 1460 0 0 -2150z"/>
-  </g>
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none" id="bookmark_icon_id" class="bookmark_icon_g icon_g">
+    <path d="M895 5106 c-40 -18 -73 -56 -85 -97 -15 -50 -13 -4841 1 -4894 21
+    -78 96 -125 176 -111 34 7 117 86 805 774 l768 767 767 -767 c673 -672 773
+    -767 805 -773 87 -16 160 32 178 118 8 38 10 720 8 2474 l-3 2422 -21 27 c-11
+    15 -33 37 -48 48 -27 21 -28 21 -1674 23 -1357 2 -1652 0 -1677 -11z m3125
+    -2436 c0 -1182 -3 -2150 -8 -2150 -4 0 -315 308 -692 685 -567 568 -691 687
+    -722 696 -84 22 -58 44 -798 -696 -377 -377 -688 -685 -692 -685 -5 0 -8 968
+    -8 2150 l0 2150 1460 0 1460 0 0 -2150z"/>
+    </g>
+  </svg>
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet" class="edit_icon" style="display: none;">
+
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none" id="edit_icon_id">
+    <path d="M3816 5110 c-112 -29 -69 12 -1887 -1808 -1648 -1649 -1737 -1740
+    -1763 -1800 -24 -56 -36 -128 -97 -590 -46 -342 -69 -547 -66 -583 14 -167
+    159 -312 325 -326 38 -3 237 19 587 66 523 69 530 71 600 105 66 33 165 130
+    1806 1773 1655 1657 1737 1741 1765 1803 25 57 29 77 29 160 0 87 -3 101 -33
+    165 -31 65 -64 101 -485 522 -417 417 -457 454 -520 483 -74 35 -188 48 -261
+    30z m429 -870 l330 -330 -255 -255 -255 -255 -332 332 -333 333 252 252 c139
+    139 255 253 258 253 3 0 154 -148 335 -330z m-860 -860 l330 -330 -1215 -1214
+    -1215 -1215 -350 -45 c-454 -58 -410 -55 -408 -31 1 11 23 182 48 380 l47 360
+    1211 1213 c667 666 1214 1212 1217 1212 3 0 154 -149 335 -330z"/>
+    </g>
   </svg>
   <script  src="./script.js"></script>
 </body>
