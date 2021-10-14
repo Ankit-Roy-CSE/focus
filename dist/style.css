@@ -607,6 +607,9 @@ body {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .max_bar
 {
@@ -618,6 +621,9 @@ body {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .day_1_min
 {
@@ -706,6 +712,17 @@ body {
   position: relative;
   top: 5px;
   left: 12px;
+}
+.legend_right
+{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.legend_unit
+{
+  color: var(--text-clr);
+  font-size: 12px;
 }
 
 .weather-grid-item_3{
