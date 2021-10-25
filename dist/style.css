@@ -96,13 +96,13 @@ body {
 }
 .cross_line
 {
-  width: 85%;
-  height: 2px;
+  width: 80%;
+  height: 3px;
   background: var(--text-clr);
   border-radius: 2px;
   position: absolute;
-  top: 15px;
-  left: 2px;
+  top: 14.2px;
+  left: 3px;
 }
 .cross_1
 {
@@ -546,6 +546,7 @@ body {
   border: none;
   background: rgba(255,255,255,0.5);
   padding: 0px 10px;
+  padding-right: 25px;
 }
 .title_bar_grid
 {
@@ -1440,6 +1441,21 @@ h2 {
   fill: var(--text-clr);
   position: absolute;
   right: 55px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  cursor: pointer;
+}
+.weather_search_con
+{
+  position: relative;
+}
+.weather_search_icon
+{
+  width: 15px;
+  height: 15px;
+  fill: var(--text-clr);
+  position: absolute;
+  right: 6px;
   top: 50%;
   transform: translate(0%, -50%);
   cursor: pointer;
