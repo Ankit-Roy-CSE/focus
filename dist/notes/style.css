@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: hsl(50, 100%, 60%);
+}
+
+.todo-form{
+    /* text-align: center;
+    margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.todo-input, .todo-button{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border:none;
+    /* all:unset; */
+}
+
+.todo-button{
+    border:none;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.todo-button:hover{
+    color:orange;
+}
+
+.todo-container{
+    width: 70%;
+    margin: 0.75rem auto;
+    padding: 2rem;
+    background: orange;
+    border-radius: 1rem;
+    
+}
+
+.todo-list{
+    list-style: none;
+}
+
+.todo-item{
+    background:white;
+    width: 100%;
+    margin: 0.5rem 1rem;
+    /* display:grid;
+    grid-template-columns: 10fr 1fr 1fr; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-content{
+    font-size: 1.25rem;
+    padding: 0 4px ;
+}
+
+/* .todo-item.completed{
+} */
+.todo-item.completed .todo-content {
+    text-decoration: line-through;
+    opacity: 0.5;
+    
+}
+
+/* .todo-item .todo-content{
+    display: block; 
+    width: 80%;
+} */
+
+.todo-btns .completed-btn,
+.todo-btns .delete-btn{
+    border: none;
+    padding:10px;
+}
+
+.fa-check , .fa-trash{
+    pointer-events: none;
+    font-size: 1.5rem;
+}
+
+.todo-btns .completed-btn{
+    background: rgb(7, 214, 7);
+    color: white;
+}
+
+.todo-btns .delete-btn{
+    background: red;
+    color: white;
+}
