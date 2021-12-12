@@ -657,3 +657,10 @@ document.querySelectorAll('.delete_link_input').forEach(function(del){
     window.location.reload();
   })
 })
+
+window.onclick = function(event)
+{
+  if (event.target !== document.querySelector('.ch_color') && event.target !== document.querySelector('.setting_container') && event.target !== document.querySelector('.setting_icon') && event.target !== document.querySelector('.use_setting_icon')) {
+    document.querySelector('.ch_color').classList.remove('active');
+  }
+}
