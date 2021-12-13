@@ -664,3 +664,20 @@ window.onclick = function(event)
     document.querySelector('.ch_color').classList.remove('active');
   }
 }
+
+function drag_drop(event) {
+  var a = document.querySelectorAll('.drag_on_off');
+  a.forEach(function(dcb){
+    if (dcb.checked == true){
+      var b = document.querySelector(`.app_con[data-app_id=\'${dcb.dataset.appidfdd}\']`);
+      var x = event.clientX;
+      var y = event.clientY;
+      var xd = dcb.dataset.drag_drop_x;
+      var yd = dcb.dataset.drag_drop_y;
+      b.style.cssText = 'left:'+(x-xd)+'px;'+'top:'+(y-yd)+'px;'+'transition: 0s;'+'transform: translate(0%,0%);';  
+    } else {
+      var b = document.querySelector(`.app_con[data-app_id=\'${dcb.dataset.appidfdd}\']`);
+      b.style.cssText += 'transition: 0.3s;';
+    }
+  })
+}
