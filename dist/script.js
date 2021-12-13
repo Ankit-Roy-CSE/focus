@@ -674,7 +674,9 @@ function drag_drop(event) {
       var y = event.clientY;
       var xd = dcb.dataset.drag_drop_x;
       var yd = dcb.dataset.drag_drop_y;
-      b.style.cssText = 'left:'+(x-xd)+'px;'+'top:'+(y-yd)+'px;'+'transition: 0s;'+'transform: translate(0%,0%);';  
+      var fx = x + parseInt(xd);
+      var fy = y + parseInt(yd);
+      b.style.cssText = 'left:'+fx+'px;'+'top:'+fy+'px;'+'transition: 0s;';  
     } else {
       var b = document.querySelector(`.app_con[data-app_id=\'${dcb.dataset.appidfdd}\']`);
       b.style.cssText += 'transition: 0.3s;';
