@@ -658,13 +658,6 @@ document.querySelectorAll('.delete_link_input').forEach(function(del){
   })
 })
 
-window.onclick = function(event)
-{
-  if (event.target !== document.querySelector('.ch_color') && event.target !== document.querySelector('.setting_container') && event.target !== document.querySelector('.setting_icon') && event.target !== document.querySelector('.use_setting_icon')) {
-    document.querySelector('.ch_color').classList.remove('active');
-  }
-}
-
 function drag_drop(event) {
   var a = document.querySelectorAll('.drag_on_off');
   a.forEach(function(dcb){
@@ -683,3 +676,4 @@ function drag_drop(event) {
     }
   })
 }
+document.documentElement.style.setProperty('--cont-blur', '4px');
