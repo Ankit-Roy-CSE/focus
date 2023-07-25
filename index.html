@@ -8,7 +8,8 @@
 <button onclick="myFunction()">Replace document</button>
 
 <script>
-  location.replace(`${window.location.href}/dist`)
+  var a = window.location.href + "/dist";
+  location.replace(a);
 </script>
 
 </body>
