@@ -1,0 +1,28 @@
+#exit_full_screen_container {
+    z-index: -1;
+    display: none;
+}
+
+.full_screen_container {
+    position: absolute;
+    right: 30px;
+    bottom: 80px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--cont-clr);
+    backdrop-filter: blur(var(--cont-blur));
+    cursor: pointer;
+    border: var(--border);
+
+}
+
+.full_screen_container:hover {
+    background: rgba(255, 255, 255, .40);
+}
+
+.full_screen {
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
