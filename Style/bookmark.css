@@ -1,0 +1,176 @@
+.bookmark_container {
+    width: 340px;
+    height: 185px;
+    background: blue;
+    position: absolute;
+    top: 25px;
+    left: -250px;
+    backdrop-filter: blur(var(--cont-blur));
+    background: var(--cont-clr);
+    z-index: 2;
+    border-radius: 10px;
+    border: var(--border);
+    transition: 0.3s;
+    transform: scale(0);
+}
+
+.bookmark_container.active {
+    top: 25px;
+    left: 25px;
+    transform: scale(1);
+}
+
+.bookmark_name {
+    color: var(--text-clr);
+    position: relative;
+    top: 25px;
+}
+
+.bookmark_icon_con,
+.cross_con {
+    width: 40px;
+    height: 40px;
+    background: var(--cont-clr);
+    z-index: 2;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    border-radius: 10px;
+    border: var(--border);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cross_con {
+    left: 5px;
+    top: 5px;
+    height: 35px;
+    width: 35px;
+}
+
+.cross_line {
+    width: 80%;
+    height: 3px;
+    background: var(--text-clr);
+    border-radius: 2px;
+    position: absolute;
+    top: 14.2px;
+    left: 3px;
+}
+
+.cross_1 {
+    transform: rotate(45deg);
+}
+
+.cross_2 {
+    transform: rotate(-45deg);
+}
+
+.bookmark_icon {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bookmarks_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: -52px;
+    left: 0px;
+}
+
+.bookmarks_img_add {
+    font-size: 45px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.bookmarks_img_add p {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -48%);
+}
+
+.bookmark_text {
+    font-size: 20px;
+    color: var(--text-clr);
+    position: absolute;
+    left: 50px;
+    top: 12px;
+}
+
+.bookmarks {
+    width: 95px;
+    height: 120px;
+    background: rgba(255, 255, 255, .30);
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    border: var(--border);
+    cursor: pointer;
+}
+
+.bookmarks:hover {
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.bookmark_1 {
+    left: 12px;
+}
+
+.bookmark_2 {
+    left: 121px;
+}
+
+.bookmark_3 {
+    left: 230px;
+}
+
+.delete_link_input {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .30);
+    position: absolute;
+    right: 4px;
+    top: 55px;
+    z-index: 3;
+}
+
+.delete_link_input[data-delete_link_id="1"] {
+    left: 80px;
+}
+
+.delete_link_input[data-delete_link_id="2"] {
+    left: 190px;
+}
+
+.delete_link_input[data-delete_link_id="3"] {
+    left: 300px;
+}
+
+.delete_link_input:hover {
+    background: rgba(255, 255, 255, .50);
+}
+
+.delete_icon {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

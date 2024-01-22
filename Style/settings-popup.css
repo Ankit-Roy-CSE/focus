@@ -1,0 +1,202 @@
+.ch_color {
+    width: 180px;
+    height: 220px;
+    background: var(--cont-clr);
+    position: relative;
+    left: 240px;
+    top: -40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    backdrop-filter: blur(var(--cont-blur));
+    transition: 0.3s;
+    opacity: 0;
+    z-index: -1;
+    border: var(--border);
+
+}
+
+.ch_color.active {
+    left: 400px;
+    opacity: 1;
+    z-index: 0;
+}
+
+.ch_color_div {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    position: relative;
+    left: 10px;
+    top: 0px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+    border: 2px solid var(--text-clr);
+}
+
+.ch_color_div:hover {
+    width: 40px;
+    height: 40px;
+    left: 7.5px;
+    top: 2.5px;
+}
+
+.ch_blur {
+    transform: rotate(0deg);
+    position: absolute;
+    left: 55px;
+    top: 100px;
+    height: 5px;
+    width: 110px;
+}
+
+.white {
+    background: rgba(255, 255, 255);
+}
+
+.black {
+    background: rgba(0, 0, 0);
+}
+
+.dodblue {
+    background: rgba(170, 212, 253);
+}
+
+.no_color {
+    background: rgba(0, 0, 0, 0);
+}
+
+.ch_color_text {
+    font-size: 18px;
+    color: var(--text-clr);
+    position: absolute;
+    left: 55px;
+    top: 10px;
+}
+
+.ch_blur_text {
+    top: 70px;
+    font-size: 17px;
+}
+
+.set_color_text {
+    font-size: 15px;
+    top: 175px;
+    left: 95px;
+}
+
+.ch_border {
+    width: 40px;
+    height: 15px;
+    position: absolute;
+    top: 40px;
+    left: 57px;
+    appearance: none;
+    transition: 0.2s;
+}
+
+.ch_border::after {
+    content: '';
+    width: 40px;
+    height: 17px;
+    background: #fff;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    transition: 0.2s;
+}
+
+.ch_border::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    position: absolute;
+    top: 3px;
+    right: 25.5px;
+    border-radius: 50%;
+    z-index: 2;
+    transition: 0.2s;
+}
+
+.ch_border:checked::after {
+    background: dodgerblue;
+}
+
+.ch_border:checked::before {
+    right: 3.5px;
+}
+
+.reset {
+    background: dodgerblue;
+    padding: 7px 0px;
+    border-radius: 10px;
+    border: 2px solid var(--text-clr);
+    width: 90px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 55px;
+    top: 120px;
+}
+
+.cont_color_input {
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    position: relative;
+    left: 10px;
+    top: 0px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+    border: 2px solid var(--text-clr);
+    padding: 15px;
+    background: var(--cont-clr);
+}
+
+.cont_color_input::after {
+    content: '+';
+    font-size: 30px;
+    color: #fff;
+    mix-blend-mode: difference;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}
+
+.icon_color_input {
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    position: absolute;
+    left: 55px;
+    bottom: 7px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+    border: 2px solid var(--text-clr);
+    padding: 15px;
+    background: var(--text-clr);
+}
+
+.icon_color_input::after {
+    content: '+';
+    font-size: 30px;
+    color: #fff;
+    mix-blend-mode: difference;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}

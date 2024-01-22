@@ -1,0 +1,87 @@
+.search_google {
+    width: 400px;
+    height: 80px;
+    background: var(--cont-clr);
+    backdrop-filter: blur(var(--cont-blur));
+    z-index: 2;
+    border-radius: 1000px;
+    position: absolute;
+    top: -100px;
+    transition: 0.3s;
+    border: var(--border);
+
+}
+
+.search_google.active {
+    top: 10px;
+}
+
+.search_google_input {
+    width: 75%;
+    height: 40px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-clr);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    padding-right: 30px;
+    color: var(--text-clr);
+    font-size: 18px;
+}
+
+.search_google_input::placeholder {
+    color: var(--text-clr);
+}
+
+.search_icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-clr);
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    cursor: pointer;
+}
+
+.open_search_google {
+    width: calc(50px + 5px);
+    height: calc(50px + 5px);
+    background: var(--cont-clr);
+    border-radius: 50% 25%;
+    position: absolute;
+    top: 0;
+    left: 48.6%;
+    transform: rotate(45deg) translate(-50%, -25%);
+    z-index: 3;
+    backdrop-filter: blur(var(--cont-blur));
+    transition: .2s;
+    cursor: pointer;
+    border: var(--border);
+
+}
+
+.open_search_google.hover {
+    border-radius: 50%;
+    top: 100px;
+}
+
+.down_arrow {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 23px;
+    left: 23px;
+    transition: 0.3s;
+}
+
+.down_arrow.hover {
+    top: 20px;
+    left: 20px;
+    transform: rotate(135deg);
+}

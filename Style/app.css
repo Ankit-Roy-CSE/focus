@@ -1,0 +1,62 @@
+.app.active {
+    background: rgba(255, 255, 255, 0.30);
+}
+
+.app_con {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+    padding: 2rem;
+    padding-top: calc(40px + 2rem);
+    background: var(--cont-clr);
+    border-radius: 10px;
+    transition: 0.3s;
+    backdrop-filter: blur(calc(var(--cont-blur)*2));
+    border: var(--border);
+    z-index: 3;
+
+}
+
+.app_con.active {
+    left: 50%;
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+}
+
+.title_bar {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    background: var(--cont-clr);
+    top: 0px;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0.1px solid var(--text-clr);
+    padding: 1.1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-clr);
+    font-size: 22px;
+}
+
+.control {
+    position: relative;
+    top: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.drag_on_off {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.drag_on_off:checked {
+    cursor: move;
+}

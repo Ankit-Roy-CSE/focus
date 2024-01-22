@@ -1,0 +1,37 @@
+.container {
+    width: 35rem;
+    padding: 1.8rem 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(var(--cont-blur));
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, .30);
+    position: absolute;
+    top: 50%;
+    color: var(--text-clr);
+    transform: translate(0%, -50%);
+    background: var(--cont-clr);
+    border: var(--border);
+}
+
+#time {
+    font-size: 8rem;
+    cursor: pointer;
+}
+
+#ampm {
+    font-size: 22px;
+
+}
+
+h1 {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+#name {
+    display: inline-block;
+    min-width: 5px;
+}

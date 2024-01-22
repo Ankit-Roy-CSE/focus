@@ -1,0 +1,77 @@
+.open_menubar {
+    font-size: 3.5em;
+    color: var(--text-clr);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.open_menubar_div {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    background: var(--cont-clr);
+    backdrop-filter: blur(var(--cont-blur));
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1;
+    border: var(--border);
+
+}
+
+.open_menubar_div.active {
+    transform: rotate(135deg);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 60px;
+    height: 60px;
+    background: var(--cont-clr);
+    border-radius: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    backdrop-filter: blur(var(--cont-blur));
+    transition: 0.5s;
+    opacity: 0;
+    padding-bottom: 70px;
+    padding-top: 10px;
+    border: var(--border);
+
+}
+
+.menu.active {
+    bottom: 20px;
+    height: 360px;
+    opacity: 1;
+}
+
+.menu_icon {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu_icon:hover {
+    background: rgba(255, 255, 255, 0.30);
+}
+
+.container_icon {
+    font-size: 2.25em;
+    width: 40px;
+    height: 40px;
+}

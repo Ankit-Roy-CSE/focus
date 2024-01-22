@@ -1,0 +1,27 @@
+.setting_container {
+    position: absolute;
+    right: 30px;
+    bottom: 25px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--cont-clr);
+    backdrop-filter: blur(var(--cont-blur));
+    cursor: pointer;
+    border: var(--border);
+
+}
+
+.setting_container:hover {
+    background: rgba(255, 255, 255, .40);
+}
+
+.setting_icon {
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
+
+.setting_icon:hover {
+    transform: rotate(90deg);
+}

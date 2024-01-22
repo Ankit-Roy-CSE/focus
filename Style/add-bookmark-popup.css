@@ -1,0 +1,78 @@
+.bookmark_link_input_con {
+    width: 300px;
+    height: 230px;
+    backdrop-filter: blur(var(--cont-blur));
+    background: rgba(255, 255, 255, .50);
+    position: absolute;
+    left: 50%;
+    top: -800px;
+    transform: scale(0) translate(-50%, -50%);
+    border-radius: 10px;
+    border: var(--border);
+    box-shadow: 0 0 15px 100vh rgba(0, 0, 0, .30);
+    z-index: 4;
+    transition: 0.2s;
+}
+
+.bookmark_link_input_con.active {
+    top: 50%;
+    transform: scale(1) translate(-50%, -50%);
+}
+
+.bookmark_link_input_con p {
+    font-size: 18px;
+    color: #000;
+    position: absolute;
+    left: 45px;
+}
+
+.bookmark_link_input_con p:nth-child(1) {
+    top: 25px;
+}
+
+.bookmark_link_input_con p:nth-child(3) {
+    top: 95px;
+}
+
+.bookmark_name_input,
+.bookmark_link_input {
+    height: 30px;
+    width: 70%;
+    outline: none;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    color: #000;
+    padding: 0px 5px;
+}
+
+.bookmark_link_input {
+    top: 115px;
+}
+
+.input_link_save {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 15px;
+    background: dodgerblue;
+    border-radius: 10px;
+    color: #fff;
+    right: 45px;
+    cursor: pointer;
+}
+
+.input_link_cancel {
+    position: absolute;
+    bottom: 20px;
+    padding: 8px 13px;
+    background: #fff;
+    border-radius: 10px;
+    color: dodgerblue;
+    right: 130px;
+    border: 2px solid dodgerblue;
+    cursor: pointer;
+}
