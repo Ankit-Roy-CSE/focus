@@ -2,9 +2,10 @@
     width: 180px;
     height: 220px;
     background: var(--cont-clr);
-    position: relative;
-    left: 240px;
-    top: -40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0,-50%);
     border-radius: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -18,7 +19,7 @@
 }
 
 .ch_color.active {
-    left: 400px;
+    left: 75%;
     opacity: 1;
     z-index: 0;
 }
