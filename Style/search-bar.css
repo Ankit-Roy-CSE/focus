@@ -1,4 +1,4 @@
-.search_google {
+.search-container {
     width: 400px;
     height: 80px;
     background: var(--cont-clr);
@@ -12,11 +12,11 @@
 
 }
 
-.search_google.active {
+.search-container.active {
     top: 10px;
 }
 
-.search_google_input {
+.search-input {
     width: 75%;
     height: 40px;
     background: transparent;
@@ -33,11 +33,11 @@
     font-size: 18px;
 }
 
-.search_google_input::placeholder {
+.search-input::placeholder {
     color: var(--text-clr);
 }
 
-.search_icon {
+.search-icon {
     width: 20px;
     height: 20px;
     fill: var(--text-clr);
@@ -48,7 +48,7 @@
     cursor: pointer;
 }
 
-.open_search_google {
+.search-toggler {
     width: calc(50px + 5px);
     height: calc(50px + 5px);
     background: var(--cont-clr);
@@ -65,7 +65,7 @@
 
 }
 
-.open_search_google.hover {
+.search-toggler.hover {
     border-radius: 50%;
     top: 100px;
 }
@@ -80,7 +80,7 @@
     transition: 0.3s;
 }
 
-.down_arrow.hover {
+.search-toggler.hover .down_arrow {
     top: 20px;
     left: 20px;
     transform: rotate(135deg);

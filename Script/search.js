@@ -1,29 +1,36 @@
-document.querySelector('.open_search_google').addEventListener('click', function () {
-    document.querySelector('.open_search_google').classList.toggle('hover');
-    document.querySelector('.down_arrow').classList.toggle('hover');
-    document.querySelector('.search_google').classList.toggle('active');
+const searchInput = document.querySelector('.search-input');
+const searchToggler = document.querySelector('.search-toggler');
+
+searchToggler.addEventListener('click', function () {
+    searchToggler.classList.toggle('hover');
+    document.querySelector('.search-container').classList.toggle('active');
 })
 
-function search_js() {
-    var a = document.querySelector('.search_google_input');
-    var b = a.value.trim();
-    var c = b.length;
-    if (c > 0) {
-        if (b.search('http') == 0 || b.search('file') == 0) {
-            b.toLowerCase();
-            window.location = b;
-        } else if (b.search('www.') == 0) {
-            b.toLowerCase();
-            window.location = 'https://' + b + '/';
-        } else {
-            window.location = 'https://www.google.com/search?q=' + b;
-        }
-    } else {
+function search(link) {
+    //validating link
+    if (link == "" || link == null) return;
+    let value = link.trim();
+    if (value.length <= 0) return;
 
+    //replacing url
+    if (value.indexOf(' ') == -1 && value.indexOf('.') >= 0) {
+        if (value.indexOf("http") == 0)
+            window.location = value;
+        else
+            window.location = "http://" + value;
+    } else {
+        window.location = 'https://www.google.com/search?q=' + value;
     }
-};
-document.querySelector('.search_google_input').addEventListener('keypress', function (event) {
+}
+
+searchInput.addEventListener('keypress', function (event) {
     if (event.keyCode == 13) {
-        search_js();
+        let link = searchInput.value;
+        search(link);
     }
 });
+
+document.querySelector(".search-icon").addEventListener("click", () => {
+    let link = searchInput.value;
+    search(link);
+})

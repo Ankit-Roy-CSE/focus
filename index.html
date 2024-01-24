@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="Style/search-bar.css">
 
   <link rel="stylesheet" href="Style/bookmark.css">
+  <link rel="stylesheet" href="Style/add-bookmark-popup.css">
 
   <link rel="stylesheet" href="Style/weather.css">
 
@@ -39,17 +40,16 @@
 
   <!-- search bar -->
 
-  <div class="open_search_google" title="Click Here for Search">
+  <div class="search-toggler" title="Click Here for Search">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt"
       viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="down_arrow">
       <use href="#down_icon_id"></use>
     </svg>
   </div>
-  <div class="search_google">
-    <input type="text" class="search_google_input" name="" placeholder="Search or type a URL">
+  <div class="search-container">
+    <input type="text" class="search-input" name="" placeholder="Search or type a URL">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt"
-      viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="search_icon"
-      onclick="search_js();">
+      viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="search-icon">
       <use href="#search_icon_id"></use>
     </svg>
   </div>
@@ -131,53 +131,61 @@
       <div class="cross_line cross_2"></div>
     </div>
     <p class="bookmark_text">Your Bookmarks</p>
+    
     <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="1">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt"
         viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon">
         <use href="#delete_icon_id"></use>
       </svg>
     </div>
-    <div class="bookmarks bookmark_1" data-link=" " data-link_id="1">
+    <div class="bookmarks bookmark_1" data-link="" data-link_id="1">
       <div class="bookmarks_img_add">
-        <p class="short_link_name_icon_1">+</p>
+        <p class="icon">+</p>
         <!-- <img class="bookmarks_img" src=""> -->
       </div>
-      <div class="bookmark_name link_name_1" data-link_name=" " data-link_name_id='1'>Add</div>
+      <div class="bookmark_name" data-link_name="" data-link_name_id='1'>Add</div>
     </div>
+
     <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="2">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt"
         viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon">
         <use href="#delete_icon_id"></use>
       </svg>
     </div>
-    <div class="bookmarks bookmark_2" data-link=" " data-link_id="2">
+    <div class="bookmarks bookmark_2" data-link="" data-link_id="2">
       <div class="bookmarks_img_add">
-        <p class="short_link_name_icon_2">+</p>
+        <p class="icon">+</p>
         <!-- <img class="bookmarks_img" src=""> -->
       </div>
-      <div class="bookmark_name link_name_2" data-link_name=" " data-link_name_id='2'>Add</div>
+      <div class="bookmark_name" data-link_name="" data-link_name_id='2'>Add</div>
     </div>
+
     <div class="delete_link_input" title="Delete Bookmark" data-delete_link_id="3">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt"
         viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="delete_icon">
         <use href="#delete_icon_id"></use>
       </svg>
     </div>
-    <div class="bookmarks bookmark_3" data-link=" " data-link_id="3">
+    <div class="bookmarks bookmark_3" data-link="" data-link_id="3">
       <div class="bookmarks_img_add">
-        <p class="short_link_name_icon_3">+</p>
+        <p class="icon">+</p>
         <!-- <img class="bookmarks_img" src=""> -->
       </div>
-      <div class="bookmark_name link_name_3" data-link_name=" " data-link_name_id='3'>Add</div>
+      <div class="bookmark_name" data-link_name=" " data-link_name_id='3'>Add</div>
     </div>
   </div>
-  <div class="bookmark_link_input_con">
+
+
+
+  <!-- Bookmark popup -->
+  
+  <div class="bookmark-popup">
     <p>Name</p>
     <input type="text" class="bookmark_name_input" name="">
     <p>URL</p>
     <input type="text" class="bookmark_link_input" name="">
-    <div class="input_link_cancel">Cancel</div>
-    <div class="input_link_save" data-input_save_id="">Save</div>
+    <div class="cancel-btn">Cancel</div>
+    <div class="save-bookmark-btn" data-input_save_id="">Save</div>
   </div>
 
 
@@ -579,7 +587,7 @@
     -------------------------------------------->
 
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt"
-    viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="search_icon" style="display: none;">
+    viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet" class="search-icon" style="display: none;">
 
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" class="icon_g"
       id="search_icon_id" stroke="none">
@@ -656,7 +664,8 @@
   <script src="./Script/settings.js"></script>
   <script src="./Script/search.js"></script>
 
-  <script src="./Script/bookmark.js"></script>
+  <script src="./Script/bookmark-class.js"></script>
+  <script src="./Script/bookmark-implementation.js"></script>
 
   <script src="./Script/app-toggler.js"></script>
   <script src="./Script/drag-and-drop-apps.js"></script>
