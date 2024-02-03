@@ -31,4 +31,5 @@ function clock() {
     }
     timeContainer.innerHTML = hour + ':' + min;
 }
+clock();
 setInterval(clock, 1000);
